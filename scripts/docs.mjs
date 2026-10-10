@@ -109,7 +109,7 @@ ${snippet}
 
 for (const el of elements) write(`api/${el.tagName}.html`, elementPage(el));
 
-const cdn = `https://cdn.jsdelivr.net/gh/kamimen/shinbun-components@v${pkg.version}/dist`;
+const cdn = `https://cdn.jsdelivr.net/npm/${pkg.name}@${pkg.version}/dist`;
 write(
   "index.html",
   layout({
@@ -129,7 +129,12 @@ write(
     </shinbun-article>
   </shinbun-page>
 </shinbun-paper>`)}</code></pre>
-    <p><code>v${esc(pkg.version)}</code> in the URL is a git tag. Pinning it keeps the page unchanged after later releases.</p>
+    <p><code>${esc(pkg.version)}</code> in the URL is the package version. Pinning it keeps the page unchanged after later releases.</p>
+
+    <h2>Install from npm</h2>
+    <pre><code>${esc(`npm install ${pkg.name}`)}</code></pre>
+    <pre><code>${esc(`import "${pkg.name}/define"; // registers every element
+import "${pkg.name}/css";`)}</code></pre>
 
     <h2 id="elements">Elements</h2>
     <p>Every element also accepts the utility attributes <code>gothic</code> and <code>nowrap</code>.</p>
