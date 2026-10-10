@@ -1,0 +1,738 @@
+{
+  "name": "shinbun-css",
+  "groups": [
+    "紙面",
+    "題字・欄外",
+    "記事",
+    "見出し",
+    "本文",
+    "写真",
+    "囲み・コラム",
+    "表",
+    "広告",
+    "罫線・文字"
+  ],
+  "classes": [
+    {
+      "name": "sb-paper",
+      "group": "紙面",
+      "role": "block",
+      "description": "紙面。根の要素。トークンと組方向を持つ。",
+      "element": "div"
+    },
+    {
+      "name": "sb-paper--15dan",
+      "group": "紙面",
+      "role": "modifier",
+      "description": "15 段 × 1 段 10 字のプリセット。",
+      "element": "div",
+      "parent": "sb-paper"
+    },
+    {
+      "name": "sb-paper--12dan",
+      "group": "紙面",
+      "role": "modifier",
+      "description": "12 段 × 1 段 12 字のプリセット。",
+      "element": "div",
+      "parent": "sb-paper"
+    },
+    {
+      "name": "sb-page",
+      "group": "紙面",
+      "role": "block",
+      "description": "紙面領域。段グリッド。縦組みでは天地が段数で決まる。",
+      "element": "main"
+    },
+    {
+      "name": "sb-page--grid",
+      "group": "紙面",
+      "role": "modifier",
+      "description": "座標指定の段グリッド（ブロック組み）。行軸方向を `--sb-lines` 行に固定する。",
+      "element": "main",
+      "parent": "sb-page"
+    },
+    {
+      "name": "sb-masthead",
+      "group": "題字・欄外",
+      "role": "block",
+      "description": "題字の帯（横組み）。専門紙や横組みの紙面向け。",
+      "element": "header"
+    },
+    {
+      "name": "sb-masthead__title",
+      "group": "題字・欄外",
+      "role": "element",
+      "description": "帯の題字（新聞名）。",
+      "element": "h1",
+      "parent": "sb-masthead"
+    },
+    {
+      "name": "sb-masthead__side",
+      "group": "題字・欄外",
+      "role": "element",
+      "description": "帯の左右に置く、号数や日付などの欄。",
+      "element": "div",
+      "parent": "sb-masthead"
+    },
+    {
+      "name": "sb-masthead__side--end",
+      "group": "題字・欄外",
+      "role": "modifier",
+      "description": "帯の右側の欄（右寄せ）。",
+      "element": "div",
+      "parent": "sb-masthead__side"
+    },
+    {
+      "name": "sb-nameplate",
+      "group": "題字・欄外",
+      "role": "block",
+      "description": "題字の枠。紙面の中に置く。縦組みの紙面では縦題字になる。文字でもロゴでもよい。",
+      "element": "header",
+      "semantic": "`.sb-page > header`"
+    },
+    {
+      "name": "sb-nameplate--horizontal",
+      "group": "題字・欄外",
+      "role": "modifier",
+      "description": "縦組みの紙面で、題字を横組みにする。",
+      "element": "header",
+      "parent": "sb-nameplate"
+    },
+    {
+      "name": "sb-nameplate__title",
+      "group": "題字・欄外",
+      "role": "element",
+      "description": "題字の文字。",
+      "element": "h1",
+      "semantic": "`.sb-page > header > h1`",
+      "parent": "sb-nameplate"
+    },
+    {
+      "name": "sb-nameplate__logo",
+      "group": "題字・欄外",
+      "role": "element",
+      "description": "題字のロゴ画像。利用者が自分のロゴを入れる。",
+      "element": "img",
+      "parent": "sb-nameplate"
+    },
+    {
+      "name": "sb-nameplate__meta",
+      "group": "題字・欄外",
+      "role": "element",
+      "description": "題字の脇に置く、号数・日付などの小さな文字（題字下）。",
+      "element": "p",
+      "parent": "sb-nameplate"
+    },
+    {
+      "name": "sb-folio",
+      "group": "題字・欄外",
+      "role": "block",
+      "description": "欄外。紙面最上部の外枠の上に表示する、面名や日付などの 1 行。",
+      "element": "div"
+    },
+    {
+      "name": "sb-folio__section",
+      "group": "題字・欄外",
+      "role": "element",
+      "description": "欄外の中の面名（枠付き）。",
+      "element": "span",
+      "parent": "sb-folio"
+    },
+    {
+      "name": "sb-article",
+      "group": "記事",
+      "role": "block",
+      "description": "記事。n 段を占める矩形。本文は段ごとに流れ、見出しは全段にまたがる（段抜き）。",
+      "element": "article",
+      "semantic": "`.sb-page > article`"
+    },
+    {
+      "name": "sb-article--lead",
+      "group": "記事",
+      "role": "modifier",
+      "description": "トップ記事。縦組みでは罫線が二重になる。",
+      "element": "article",
+      "parent": "sb-article"
+    },
+    {
+      "name": "sb-article--editorial",
+      "group": "記事",
+      "role": "modifier",
+      "description": "社説・論説。本文をやや大きくする。",
+      "element": "article",
+      "parent": "sb-article"
+    },
+    {
+      "name": "sb-headline",
+      "group": "見出し",
+      "role": "block",
+      "description": "主見出し。",
+      "element": "h2",
+      "semantic": "`.sb-page > article > h2`"
+    },
+    {
+      "name": "sb-headline--xl",
+      "group": "見出し",
+      "role": "modifier",
+      "description": "主見出しの大きさ: 特大。",
+      "element": "h2",
+      "parent": "sb-headline"
+    },
+    {
+      "name": "sb-headline--l",
+      "group": "見出し",
+      "role": "modifier",
+      "description": "主見出しの大きさ: 大。",
+      "element": "h2",
+      "parent": "sb-headline"
+    },
+    {
+      "name": "sb-headline--m",
+      "group": "見出し",
+      "role": "modifier",
+      "description": "主見出しの大きさ: 中。",
+      "element": "h2",
+      "parent": "sb-headline"
+    },
+    {
+      "name": "sb-headline--s",
+      "group": "見出し",
+      "role": "modifier",
+      "description": "主見出しの大きさ: 小。",
+      "element": "h2",
+      "parent": "sb-headline"
+    },
+    {
+      "name": "sb-kicker",
+      "group": "見出し",
+      "role": "block",
+      "description": "肩見出し。主見出しの前で補足する。",
+      "element": "p"
+    },
+    {
+      "name": "sb-sleeve",
+      "group": "見出し",
+      "role": "block",
+      "description": "袖見出し。主見出しを説明・補足する。",
+      "element": "p"
+    },
+    {
+      "name": "sb-sub",
+      "group": "見出し",
+      "role": "block",
+      "description": "脇見出し。主見出しに添える。",
+      "element": "p"
+    },
+    {
+      "name": "sb-yoko",
+      "group": "見出し",
+      "role": "block",
+      "description": "横見出し。縦組みの紙面で横向きに組む。紙面の直接の子にして、位置と大きさを指定する。",
+      "element": "h2"
+    },
+    {
+      "name": "sb-yoko--reverse",
+      "group": "見出し",
+      "role": "modifier",
+      "description": "横見出しを反転（地を墨色、文字を紙色）にする。",
+      "element": "h2",
+      "parent": "sb-yoko"
+    },
+    {
+      "name": "sb-lead",
+      "group": "本文",
+      "role": "block",
+      "description": "リード（前文）。",
+      "element": "p"
+    },
+    {
+      "name": "sb-dateline",
+      "group": "本文",
+      "role": "block",
+      "description": "発信地を入れる要素。",
+      "element": "p"
+    },
+    {
+      "name": "sb-byline",
+      "group": "本文",
+      "role": "block",
+      "description": "署名を入れる要素。",
+      "element": "p"
+    },
+    {
+      "name": "sb-flush",
+      "group": "本文",
+      "role": "modifier",
+      "description": "天付き。字下げをしない段落。",
+      "element": "p"
+    },
+    {
+      "name": "sb-photo",
+      "group": "写真",
+      "role": "block",
+      "description": "写真。",
+      "element": "figure",
+      "semantic": "`.sb-paper figure`"
+    },
+    {
+      "name": "sb-photo__img",
+      "group": "写真",
+      "role": "element",
+      "description": "写真の画像部分。",
+      "element": "img",
+      "semantic": "`.sb-paper figure > img`",
+      "parent": "sb-photo"
+    },
+    {
+      "name": "sb-photo__caption",
+      "group": "写真",
+      "role": "element",
+      "description": "写真の説明文（エトキ）。",
+      "element": "figcaption",
+      "semantic": "`.sb-paper figcaption`",
+      "parent": "sb-photo"
+    },
+    {
+      "name": "sb-box",
+      "group": "囲み・コラム",
+      "role": "block",
+      "description": "囲み。",
+      "element": "aside",
+      "semantic": "`.sb-paper aside`"
+    },
+    {
+      "name": "sb-box__title",
+      "group": "囲み・コラム",
+      "role": "element",
+      "description": "囲みの見出し。",
+      "element": "p",
+      "semantic": "`.sb-paper aside > h3`",
+      "parent": "sb-box"
+    },
+    {
+      "name": "sb-column",
+      "group": "囲み・コラム",
+      "role": "modifier",
+      "description": "コラム（固定欄）。記事に併用する。",
+      "element": "article",
+      "parent": "sb-article"
+    },
+    {
+      "name": "sb-table",
+      "group": "表",
+      "role": "block",
+      "description": "表。横組みで表示する。",
+      "element": "table",
+      "semantic": "`.sb-paper table`"
+    },
+    {
+      "name": "sb-table--tv",
+      "group": "表",
+      "role": "modifier",
+      "description": "番組表向けの、小さい文字と詰めた余白。",
+      "element": "table",
+      "parent": "sb-table"
+    },
+    {
+      "name": "sb-num",
+      "group": "表",
+      "role": "modifier",
+      "description": "表の数値のセル。右寄せ、桁をそろえる。",
+      "element": "td"
+    },
+    {
+      "name": "sb-ad",
+      "group": "広告",
+      "role": "block",
+      "description": "広告枠。",
+      "element": "div"
+    },
+    {
+      "name": "sb-ad--kijishita",
+      "group": "広告",
+      "role": "modifier",
+      "description": "記事下。段軸の末尾（縦組みでは紙面の下端）に寄せる。占める段数も指定する。",
+      "element": "div",
+      "parent": "sb-ad"
+    },
+    {
+      "name": "sb-ad--zen",
+      "group": "広告",
+      "role": "modifier",
+      "description": "全。行軸いっぱいに広げる。",
+      "element": "div",
+      "parent": "sb-ad"
+    },
+    {
+      "name": "sb-ad--han",
+      "group": "広告",
+      "role": "modifier",
+      "description": "半。行軸の半分（`--sb-lines` の半分）にする。`data-sb-x` も指定する。",
+      "element": "div",
+      "parent": "sb-ad"
+    },
+    {
+      "name": "sb-ad--zen5",
+      "group": "広告",
+      "role": "modifier",
+      "description": "全 5 段（占める段数を 5 にする）。",
+      "element": "div",
+      "parent": "sb-ad"
+    },
+    {
+      "name": "sb-ad--han5",
+      "group": "広告",
+      "role": "modifier",
+      "description": "半 5 段（占める段数を 5 にする）。",
+      "element": "div",
+      "parent": "sb-ad"
+    },
+    {
+      "name": "sb-ad--zen2",
+      "group": "広告",
+      "role": "modifier",
+      "description": "全 2 段（占める段数を 2 にする）。",
+      "element": "div",
+      "parent": "sb-ad"
+    },
+    {
+      "name": "sb-ad--han2",
+      "group": "広告",
+      "role": "modifier",
+      "description": "半 2 段（占める段数を 2 にする）。",
+      "element": "div",
+      "parent": "sb-ad"
+    },
+    {
+      "name": "sb-ad--full",
+      "group": "広告",
+      "role": "modifier",
+      "description": "全面。紙面の全段・全行を占める。",
+      "element": "div",
+      "parent": "sb-ad"
+    },
+    {
+      "name": "sb-rule",
+      "group": "罫線・文字",
+      "role": "block",
+      "description": "罫線。",
+      "element": "hr"
+    },
+    {
+      "name": "sb-rule--double",
+      "group": "罫線・文字",
+      "role": "modifier",
+      "description": "二重罫線。",
+      "element": "hr",
+      "parent": "sb-rule"
+    },
+    {
+      "name": "sb-emphasis",
+      "group": "罫線・文字",
+      "role": "block",
+      "description": "圏点（傍点）。",
+      "element": "span"
+    },
+    {
+      "name": "sb-tcy",
+      "group": "罫線・文字",
+      "role": "block",
+      "description": "縦中横。縦組みの中で、文字列を横向きに 1 字分で組む。",
+      "element": "span"
+    },
+    {
+      "name": "sb-horizontal",
+      "group": "罫線・文字",
+      "role": "block",
+      "description": "局所的な横組み。",
+      "element": "span"
+    },
+    {
+      "name": "sb-sideways",
+      "group": "罫線・文字",
+      "role": "block",
+      "description": "欧文を 90 度回転して組む。縦組みの既定は、欧文も正立。",
+      "element": "span"
+    },
+    {
+      "name": "sb-gothic",
+      "group": "罫線・文字",
+      "role": "block",
+      "description": "ゴシック体にする。"
+    },
+    {
+      "name": "sb-nowrap",
+      "group": "罫線・文字",
+      "role": "block",
+      "description": "折り返さない。"
+    }
+  ],
+  "attributes": [
+    {
+      "name": "data-sb-writing",
+      "on": ".sb-paper",
+      "values": [
+        "vertical",
+        "horizontal"
+      ],
+      "default": "vertical",
+      "description": "組方向。縦組み（既定）か、横組みか。"
+    },
+    {
+      "name": "data-sb-theme",
+      "on": ".sb-paper",
+      "values": [
+        "light",
+        "dark",
+        "auto"
+      ],
+      "default": "light",
+      "description": "配色。`auto` は OS の設定に従う。"
+    },
+    {
+      "name": "data-sb-debug",
+      "on": ".sb-paper",
+      "boolean": true,
+      "description": "紙面の直接の子を点線で囲み、配置を確かめやすくする。"
+    },
+    {
+      "name": "data-sb-auto-tcy",
+      "on": "任意の要素",
+      "boolean": true,
+      "description": "`src/shinbun.js` が、その要素の子孫の 2 桁の数字を `.sb-tcy` で包む。"
+    },
+    {
+      "name": "data-sb-responsive",
+      "on": ".sb-paper",
+      "values": null,
+      "description": "`src/shinbun.js` が、画面幅に応じて `data-sb-writing` を切り替える。値は切り替える幅（px）。省略すると 768。"
+    },
+    {
+      "name": "data-sb-no-tcy",
+      "on": "任意の要素",
+      "boolean": true,
+      "description": "その子孫を `data-sb-auto-tcy` の対象から外す。"
+    }
+  ],
+  "placement": [
+    {
+      "name": "data-sb-span",
+      "property": "--sb-span",
+      "range": [
+        1,
+        15
+      ],
+      "description": "占める段数。"
+    },
+    {
+      "name": "data-sb-y",
+      "property": "--sb-y",
+      "range": [
+        1,
+        15
+      ],
+      "description": "開始する段（1 から数える。縦組みでは上から、横組みでは左から）。"
+    },
+    {
+      "name": "data-sb-x",
+      "property": "--sb-x",
+      "range": [
+        1,
+        60
+      ],
+      "description": "行軸の開始位置（1 から数える。縦組みでは右から、横組みでは上から）。"
+    },
+    {
+      "name": "data-sb-w",
+      "property": "--sb-w",
+      "range": [
+        1,
+        60
+      ],
+      "description": "行軸方向に占める行数。"
+    }
+  ],
+  "tokens": [
+    {
+      "name": "--sb-fs",
+      "group": "版面",
+      "default": "0.8rem",
+      "description": "文字サイズ。本文の 1 字の大きさ。"
+    },
+    {
+      "name": "--sb-lh",
+      "group": "版面",
+      "default": "1.55",
+      "description": "行送り（文字サイズに対する倍率）。行間は `--sb-lh` − 1。"
+    },
+    {
+      "name": "--sb-chars",
+      "group": "版面",
+      "default": "10",
+      "description": "縦組みでの 1 段の字数。行長は `--sb-chars` × `--sb-fs`。"
+    },
+    {
+      "name": "--sb-dan",
+      "group": "版面",
+      "default": "10",
+      "description": "縦組みでの 1 ページの段数。横組みでは `--sb-dan-h` の値になる。"
+    },
+    {
+      "name": "--sb-dan-h",
+      "group": "版面",
+      "default": "6",
+      "description": "横組みでの 1 ページの段数。"
+    },
+    {
+      "name": "--sb-lines",
+      "group": "版面",
+      "default": "36",
+      "description": "座標指定グリッド（`.sb-page--grid`）での、行軸方向の行数。"
+    },
+    {
+      "name": "--sb-gap",
+      "group": "版面",
+      "default": "var(--sb-fs)",
+      "description": "段間・記事間のアキ。"
+    },
+    {
+      "name": "--sb-pitch",
+      "group": "版面",
+      "default": "calc(var(--sb-fs) * var(--sb-lh))",
+      "description": "行送りの実寸。座標指定の行の高さに使う。"
+    },
+    {
+      "name": "--sb-paper",
+      "group": "色",
+      "default": "light-dark(#f4eedd, #17140f)",
+      "description": "紙の色。"
+    },
+    {
+      "name": "--sb-ink",
+      "group": "色",
+      "default": "light-dark(#1b1812, #eee6d2)",
+      "description": "文字の色。"
+    },
+    {
+      "name": "--sb-muted",
+      "group": "色",
+      "default": "light-dark(#5d564a, #a79f8c)",
+      "description": "補助の文字の色。"
+    },
+    {
+      "name": "--sb-rule",
+      "group": "色",
+      "default": "light-dark(#1b1812, #eee6d2)",
+      "description": "罫線の色。"
+    },
+    {
+      "name": "--sb-rule-soft",
+      "group": "色",
+      "default": "light-dark(#9a917c, #6f6858)",
+      "description": "細い罫線の色。"
+    },
+    {
+      "name": "--sb-accent",
+      "group": "色",
+      "default": "light-dark(#a02a1f, #e5786b)",
+      "description": "強調の色（肩見出しなど）。"
+    },
+    {
+      "name": "--sb-photo-bg",
+      "group": "色",
+      "default": "light-dark(#cfc6b0, #3a352b)",
+      "description": "写真の下地の色。"
+    },
+    {
+      "name": "--sb-font-body",
+      "group": "書体",
+      "default": "明朝体系のフォント一覧",
+      "description": "本文の書体。"
+    },
+    {
+      "name": "--sb-font-gothic",
+      "group": "書体",
+      "default": "ゴシック体系のフォント一覧",
+      "description": "ゴシック体の書体。"
+    },
+    {
+      "name": "--sb-h-xl",
+      "group": "見出し",
+      "default": "3.4",
+      "description": "特大の見出しの大きさ（文字サイズに対する倍率）。"
+    },
+    {
+      "name": "--sb-h-l",
+      "group": "見出し",
+      "default": "2.4",
+      "description": "大の見出しの大きさ。"
+    },
+    {
+      "name": "--sb-h-m",
+      "group": "見出し",
+      "default": "1.7",
+      "description": "中の見出しの大きさ。"
+    },
+    {
+      "name": "--sb-h-s",
+      "group": "見出し",
+      "default": "1.2",
+      "description": "小の見出しの大きさ。"
+    },
+    {
+      "name": "--sb-photo-ratio",
+      "group": "写真",
+      "default": "4 / 5（横組みでは 4 / 3）",
+      "description": "写真の比率「幅 / 高さ」。"
+    },
+    {
+      "name": "--sb-y",
+      "group": "配置",
+      "default": "自動",
+      "description": "開始する段（1 から数える。縦組みでは上から、横組みでは左から）。`data-sb-y` でも指定できる。"
+    },
+    {
+      "name": "--sb-span",
+      "group": "配置",
+      "default": "3",
+      "description": "占める段数。`data-sb-span` でも指定できる。"
+    },
+    {
+      "name": "--sb-x",
+      "group": "配置",
+      "default": "自動",
+      "description": "行軸の開始位置（1 から数える。縦組みでは右から、横組みでは上から）。`data-sb-x` でも指定できる。"
+    },
+    {
+      "name": "--sb-w",
+      "group": "配置",
+      "default": "1",
+      "description": "行軸方向に占める行数。座標指定のときは必ず指定する。`data-sb-w` でも指定できる。"
+    }
+  ],
+  "internalTokens": [
+    "--sb-track"
+  ],
+  "js": [
+    {
+      "name": "splitTcy",
+      "signature": "splitTcy(text)",
+      "description": "文字列を、縦中横にする部分とそれ以外に分ける。DOM に依存しない。"
+    },
+    {
+      "name": "autoTcy",
+      "signature": "autoTcy(root)",
+      "description": "`root` 以下の本文で、半角の 2 桁の数字を `.sb-tcy` で包む。何度呼んでも二重に包まない。"
+    },
+    {
+      "name": "responsive",
+      "signature": "responsive(paper, { breakpoint })",
+      "description": "画面幅に応じて `data-sb-writing` を切り替える。監視を止める関数を返す。"
+    },
+    {
+      "name": "findOverflow",
+      "signature": "findOverflow(root)",
+      "description": "座標指定の記事のうち、指定した長方形に収まらずにはみ出しているものを返す。"
+    }
+  ]
+}

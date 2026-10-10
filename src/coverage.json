@@ -1,0 +1,241 @@
+{
+ "upstream": "shinbun-css v0.1.0",
+ "classes": {
+  "sb-paper": {
+   "html": "<shinbun-paper></shinbun-paper>",
+   "target": null
+  },
+  "sb-paper--15dan": {
+   "html": "<shinbun-paper preset=\"15dan\"></shinbun-paper>",
+   "target": null
+  },
+  "sb-paper--12dan": {
+   "html": "<shinbun-paper preset=\"12dan\"></shinbun-paper>",
+   "target": null
+  },
+  "sb-page": {
+   "html": "<shinbun-page></shinbun-page>",
+   "target": null
+  },
+  "sb-page--grid": {
+   "html": "<shinbun-page grid></shinbun-page>",
+   "target": null
+  },
+  "sb-masthead": {
+   "html": "<shinbun-masthead></shinbun-masthead>",
+   "target": null
+  },
+  "sb-masthead__title": {
+   "html": "<shinbun-masthead><h1>t</h1></shinbun-masthead>",
+   "target": "h1"
+  },
+  "sb-masthead__side": {
+   "html": "<shinbun-masthead><div side>s</div></shinbun-masthead>",
+   "target": "div"
+  },
+  "sb-masthead__side--end": {
+   "html": "<shinbun-masthead><div side=\"end\">s</div></shinbun-masthead>",
+   "target": "div"
+  },
+  "sb-nameplate": {
+   "html": "<shinbun-nameplate></shinbun-nameplate>",
+   "target": null
+  },
+  "sb-nameplate--horizontal": {
+   "html": "<shinbun-nameplate horizontal></shinbun-nameplate>",
+   "target": null
+  },
+  "sb-nameplate__title": {
+   "html": "<shinbun-nameplate><h1>t</h1></shinbun-nameplate>",
+   "target": "h1"
+  },
+  "sb-nameplate__logo": {
+   "html": "<shinbun-nameplate><img alt=\"\"></shinbun-nameplate>",
+   "target": "img"
+  },
+  "sb-nameplate__meta": {
+   "html": "<shinbun-nameplate><p>m</p></shinbun-nameplate>",
+   "target": "p"
+  },
+  "sb-folio": {
+   "html": "<shinbun-folio></shinbun-folio>",
+   "target": null
+  },
+  "sb-folio__section": {
+   "html": "<shinbun-folio><span section>1</span></shinbun-folio>",
+   "target": "span"
+  },
+  "sb-article": {
+   "html": "<shinbun-article></shinbun-article>",
+   "target": null
+  },
+  "sb-article--lead": {
+   "html": "<shinbun-article lead></shinbun-article>",
+   "target": null
+  },
+  "sb-article--editorial": {
+   "html": "<shinbun-article editorial></shinbun-article>",
+   "target": null
+  },
+  "sb-headline": {
+   "html": "<shinbun-headline></shinbun-headline>",
+   "target": null
+  },
+  "sb-headline--xl": {
+   "html": "<shinbun-headline size=\"xl\"></shinbun-headline>",
+   "target": null
+  },
+  "sb-headline--l": {
+   "html": "<shinbun-headline size=\"l\"></shinbun-headline>",
+   "target": null
+  },
+  "sb-headline--m": {
+   "html": "<shinbun-headline size=\"m\"></shinbun-headline>",
+   "target": null
+  },
+  "sb-headline--s": {
+   "html": "<shinbun-headline size=\"s\"></shinbun-headline>",
+   "target": null
+  },
+  "sb-kicker": {
+   "html": "<shinbun-kicker></shinbun-kicker>",
+   "target": null
+  },
+  "sb-sleeve": {
+   "html": "<shinbun-sleeve></shinbun-sleeve>",
+   "target": null
+  },
+  "sb-sub": {
+   "html": "<shinbun-sub></shinbun-sub>",
+   "target": null
+  },
+  "sb-yoko": {
+   "html": "<shinbun-yoko></shinbun-yoko>",
+   "target": null
+  },
+  "sb-yoko--reverse": {
+   "html": "<shinbun-yoko reverse></shinbun-yoko>",
+   "target": null
+  },
+  "sb-lead": {
+   "html": "<shinbun-lead></shinbun-lead>",
+   "target": null
+  },
+  "sb-dateline": {
+   "html": "<shinbun-dateline></shinbun-dateline>",
+   "target": null
+  },
+  "sb-byline": {
+   "html": "<shinbun-byline></shinbun-byline>",
+   "target": null
+  },
+  "sb-flush": {
+   "html": "<shinbun-paragraph flush></shinbun-paragraph>",
+   "target": null
+  },
+  "sb-photo": {
+   "html": "<shinbun-photo></shinbun-photo>",
+   "target": null
+  },
+  "sb-photo__img": {
+   "html": "<shinbun-photo><img alt=\"\"></shinbun-photo>",
+   "target": "img"
+  },
+  "sb-photo__caption": {
+   "html": "<shinbun-photo><figcaption>c</figcaption></shinbun-photo>",
+   "target": "figcaption"
+  },
+  "sb-box": {
+   "html": "<shinbun-box></shinbun-box>",
+   "target": null
+  },
+  "sb-box__title": {
+   "html": "<shinbun-box><h3>t</h3></shinbun-box>",
+   "target": "h3"
+  },
+  "sb-column": {
+   "html": "<shinbun-article column></shinbun-article>",
+   "target": null
+  },
+  "sb-table": {
+   "html": "<shinbun-table><table><tbody><tr><td>1</td></tr></tbody></table></shinbun-table>",
+   "target": "table"
+  },
+  "sb-table--tv": {
+   "html": "<shinbun-table tv><table><tbody><tr><td>1</td></tr></tbody></table></shinbun-table>",
+   "target": "table"
+  },
+  "sb-num": {
+   "html": "<shinbun-table><table><tbody><tr><td num>1</td></tr></tbody></table></shinbun-table>",
+   "target": "td"
+  },
+  "sb-ad": {
+   "html": "<shinbun-ad></shinbun-ad>",
+   "target": null
+  },
+  "sb-ad--kijishita": {
+   "html": "<shinbun-ad kind=\"kijishita\"></shinbun-ad>",
+   "target": null
+  },
+  "sb-ad--zen": {
+   "html": "<shinbun-ad kind=\"zen\"></shinbun-ad>",
+   "target": null
+  },
+  "sb-ad--han": {
+   "html": "<shinbun-ad kind=\"han\"></shinbun-ad>",
+   "target": null
+  },
+  "sb-ad--zen5": {
+   "html": "<shinbun-ad kind=\"zen5\"></shinbun-ad>",
+   "target": null
+  },
+  "sb-ad--han5": {
+   "html": "<shinbun-ad kind=\"han5\"></shinbun-ad>",
+   "target": null
+  },
+  "sb-ad--zen2": {
+   "html": "<shinbun-ad kind=\"zen2\"></shinbun-ad>",
+   "target": null
+  },
+  "sb-ad--han2": {
+   "html": "<shinbun-ad kind=\"han2\"></shinbun-ad>",
+   "target": null
+  },
+  "sb-ad--full": {
+   "html": "<shinbun-ad kind=\"full\"></shinbun-ad>",
+   "target": null
+  },
+  "sb-rule": {
+   "html": "<shinbun-rule></shinbun-rule>",
+   "target": null
+  },
+  "sb-rule--double": {
+   "html": "<shinbun-rule double></shinbun-rule>",
+   "target": null
+  },
+  "sb-emphasis": {
+   "html": "<shinbun-emphasis></shinbun-emphasis>",
+   "target": null
+  },
+  "sb-tcy": {
+   "html": "<shinbun-tcy></shinbun-tcy>",
+   "target": null
+  },
+  "sb-horizontal": {
+   "html": "<shinbun-horizontal></shinbun-horizontal>",
+   "target": null
+  },
+  "sb-sideways": {
+   "html": "<shinbun-sideways></shinbun-sideways>",
+   "target": null
+  },
+  "sb-gothic": {
+   "html": "<shinbun-lead gothic></shinbun-lead>",
+   "target": null
+  },
+  "sb-nowrap": {
+   "html": "<shinbun-lead nowrap></shinbun-lead>",
+   "target": null
+  }
+ }
+}

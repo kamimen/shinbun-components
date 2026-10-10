@@ -1,0 +1,43 @@
+/* Loaded after shinbun.css. Each element adds the shinbun-css classes to itself,
+   so this file only covers what classes cannot: default display, the unstyled flash,
+   and cases where shinbun-css styles tags (p, figure > img) that custom elements do not match. */
+
+@layer sb.base {
+  /* Custom elements are inline by default. Low specificity, and upstream display rules (grid, flex) win. */
+  :where(
+    shinbun-paper, shinbun-article, shinbun-headline, shinbun-photo, shinbun-kicker, shinbun-sleeve, shinbun-sub,
+    shinbun-lead, shinbun-dateline, shinbun-byline, shinbun-paragraph, shinbun-box, shinbun-rule, shinbun-table
+  ) {
+    display: block;
+  }
+
+  /* Hide the paper until the script defines it, so it does not flash unstyled. Without JS nothing is hidden. */
+  @media (scripting: enabled) {
+    shinbun-paper:not(:defined) {
+      visibility: hidden;
+    }
+  }
+}
+
+@layer sb.components {
+  /* shinbun-css indents `.sb-article p`; the same for shinbun-paragraph, unless `flush` */
+  .sb-article :where(shinbun-paragraph) {
+    text-indent: 1em;
+  }
+  .sb-article shinbun-paragraph.sb-flush {
+    text-indent: 0;
+  }
+
+  /* A vertical page shrinks to its content inside the horizontal paper and sat on the left;
+     vertical text starts at the right edge, so push the page there */
+  .sb-paper:not([data-sb-writing="horizontal"]) .sb-page {
+    width: fit-content;
+    margin-left: auto;
+  }
+
+  /* A photo placed in the page without `w` has no height to fill, so give the image its ratio */
+  .sb-page > .sb-photo:not([data-sb-w]) > .sb-photo__img {
+    flex: none;
+    aspect-ratio: var(--sb-photo-ratio, 4 / 5);
+  }
+}

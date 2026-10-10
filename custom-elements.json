@@ -1,0 +1,2079 @@
+{
+  "schemaVersion": "1.0.0",
+  "readme": "",
+  "modules": [
+    {
+      "kind": "javascript-module",
+      "path": "src/elements/article.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "Article. Occupies `span` columns; body text flows across them, headlines and photos span all of them.",
+          "name": "ShinbunArticle",
+          "slots": [
+            {
+              "description": "shinbun-headline, shinbun-photo, paragraphs",
+              "name": ""
+            }
+          ],
+          "members": [
+            {
+              "kind": "field",
+              "name": "defaultTag",
+              "type": {
+                "text": "string"
+              },
+              "static": true,
+              "default": "\"shinbun-article\""
+            },
+            {
+              "kind": "field",
+              "name": "block",
+              "type": {
+                "text": "string"
+              },
+              "static": true,
+              "default": "\"sb-article\""
+            },
+            {
+              "kind": "field",
+              "name": "role",
+              "type": {
+                "text": "string"
+              },
+              "static": true,
+              "default": "\"article\""
+            },
+            {
+              "kind": "field",
+              "name": "flags",
+              "type": {
+                "text": "object"
+              },
+              "static": true,
+              "default": "{ lead: \"sb-article--lead\", editorial: \"sb-article--editorial\", column: \"sb-column\" }"
+            },
+            {
+              "kind": "field",
+              "name": "lead",
+              "type": {
+                "text": "boolean"
+              }
+            }
+          ],
+          "attributes": [
+            {
+              "type": {
+                "text": "number"
+              },
+              "description": "Number of columns (1-15)",
+              "name": "span"
+            },
+            {
+              "type": {
+                "text": "number"
+              },
+              "description": "Start column (1-15)",
+              "name": "y"
+            },
+            {
+              "type": {
+                "text": "number"
+              },
+              "description": "Start position on the line axis (1-60)",
+              "name": "x"
+            },
+            {
+              "type": {
+                "text": "number"
+              },
+              "description": "Lines occupied on the line axis (1-60)",
+              "name": "w"
+            },
+            {
+              "type": {
+                "text": "boolean"
+              },
+              "description": "Lead article (double rule below)",
+              "name": "lead"
+            },
+            {
+              "type": {
+                "text": "boolean"
+              },
+              "description": "Editorial: slightly larger body text",
+              "name": "editorial"
+            },
+            {
+              "type": {
+                "text": "boolean"
+              },
+              "description": "Signed column with a tinted background",
+              "name": "column"
+            }
+          ],
+          "superclass": {
+            "name": "PlacedElement",
+            "module": "/src/internal/base.ts"
+          },
+          "tagName": "shinbun-article",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "ShinbunArticle",
+          "declaration": {
+            "name": "ShinbunArticle",
+            "module": "src/elements/article.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/elements/bands.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "Horizontal band at the top of a horizontal-writing paper: title and side notes.\nA direct `h1` is the title; children with `side` (or `side=\"end\"`) are the side blocks.",
+          "name": "ShinbunMasthead",
+          "slots": [
+            {
+              "description": "h1 title and `side` blocks",
+              "name": ""
+            }
+          ],
+          "members": [
+            {
+              "kind": "field",
+              "name": "defaultTag",
+              "type": {
+                "text": "string"
+              },
+              "static": true,
+              "default": "\"shinbun-masthead\""
+            },
+            {
+              "kind": "field",
+              "name": "block",
+              "type": {
+                "text": "string"
+              },
+              "static": true,
+              "default": "\"sb-masthead\""
+            },
+            {
+              "kind": "field",
+              "name": "parts",
+              "type": {
+                "text": "object"
+              },
+              "static": true,
+              "default": "{ h1: \"sb-masthead__title\", \"[side]\": \"sb-masthead__side\", \"[side=end]\": \"sb-masthead__side--end\", }"
+            }
+          ],
+          "superclass": {
+            "name": "ShinbunElement",
+            "module": "/src/internal/base.ts"
+          },
+          "tagName": "shinbun-masthead",
+          "customElement": true
+        },
+        {
+          "kind": "class",
+          "description": "Nameplate (title block) placed in the page grid. A direct `h1` is the title,\n`img` the logo and `p` the meta line.",
+          "name": "ShinbunNameplate",
+          "slots": [
+            {
+              "description": "h1, img and p",
+              "name": ""
+            }
+          ],
+          "members": [
+            {
+              "kind": "field",
+              "name": "defaultTag",
+              "type": {
+                "text": "string"
+              },
+              "static": true,
+              "default": "\"shinbun-nameplate\""
+            },
+            {
+              "kind": "field",
+              "name": "block",
+              "type": {
+                "text": "string"
+              },
+              "static": true,
+              "default": "\"sb-nameplate\""
+            },
+            {
+              "kind": "field",
+              "name": "flags",
+              "type": {
+                "text": "object"
+              },
+              "static": true,
+              "default": "{ horizontal: \"sb-nameplate--horizontal\" }"
+            },
+            {
+              "kind": "field",
+              "name": "parts",
+              "type": {
+                "text": "object"
+              },
+              "static": true,
+              "default": "{ h1: \"sb-nameplate__title\", img: \"sb-nameplate__logo\", p: \"sb-nameplate__meta\" }"
+            }
+          ],
+          "attributes": [
+            {
+              "type": {
+                "text": "number"
+              },
+              "description": "Number of columns (1-15)",
+              "name": "span"
+            },
+            {
+              "type": {
+                "text": "number"
+              },
+              "description": "Start column (1-15)",
+              "name": "y"
+            },
+            {
+              "type": {
+                "text": "number"
+              },
+              "description": "Start position on the line axis (1-60)",
+              "name": "x"
+            },
+            {
+              "type": {
+                "text": "number"
+              },
+              "description": "Lines occupied on the line axis (1-60)",
+              "name": "w"
+            },
+            {
+              "type": {
+                "text": "boolean"
+              },
+              "description": "Set the title horizontally inside a vertical paper",
+              "name": "horizontal"
+            }
+          ],
+          "superclass": {
+            "name": "PlacedElement",
+            "module": "/src/internal/base.ts"
+          },
+          "tagName": "shinbun-nameplate",
+          "customElement": true
+        },
+        {
+          "kind": "class",
+          "description": "Folio: the line outside the page area with the section name and date.\nA child with `section` is the section label.",
+          "name": "ShinbunFolio",
+          "slots": [
+            {
+              "description": "Text and the `section` label",
+              "name": ""
+            }
+          ],
+          "members": [
+            {
+              "kind": "field",
+              "name": "defaultTag",
+              "type": {
+                "text": "string"
+              },
+              "static": true,
+              "default": "\"shinbun-folio\""
+            },
+            {
+              "kind": "field",
+              "name": "block",
+              "type": {
+                "text": "string"
+              },
+              "static": true,
+              "default": "\"sb-folio\""
+            },
+            {
+              "kind": "field",
+              "name": "parts",
+              "type": {
+                "text": "object"
+              },
+              "static": true,
+              "default": "{ \"[section]\": \"sb-folio__section\" }"
+            }
+          ],
+          "superclass": {
+            "name": "ShinbunElement",
+            "module": "/src/internal/base.ts"
+          },
+          "tagName": "shinbun-folio",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "ShinbunMasthead",
+          "declaration": {
+            "name": "ShinbunMasthead",
+            "module": "src/elements/bands.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "ShinbunNameplate",
+          "declaration": {
+            "name": "ShinbunNameplate",
+            "module": "src/elements/bands.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "ShinbunFolio",
+          "declaration": {
+            "name": "ShinbunFolio",
+            "module": "src/elements/bands.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/elements/blocks.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "Box for explanations and key points. A direct `h3` is the title.\nSpans all columns inside an article; in the page grid it can be placed with `span`, `y`, `x`, `w`.",
+          "name": "ShinbunBox",
+          "slots": [
+            {
+              "description": "h3 title and text",
+              "name": ""
+            }
+          ],
+          "members": [
+            {
+              "kind": "field",
+              "name": "defaultTag",
+              "type": {
+                "text": "string"
+              },
+              "static": true,
+              "default": "\"shinbun-box\""
+            },
+            {
+              "kind": "field",
+              "name": "block",
+              "type": {
+                "text": "string"
+              },
+              "static": true,
+              "default": "\"sb-box\""
+            },
+            {
+              "kind": "field",
+              "name": "role",
+              "type": {
+                "text": "string"
+              },
+              "static": true,
+              "default": "\"note\""
+            },
+            {
+              "kind": "field",
+              "name": "parts",
+              "type": {
+                "text": "object"
+              },
+              "static": true,
+              "default": "{ h3: \"sb-box__title\" }"
+            }
+          ],
+          "attributes": [
+            {
+              "type": {
+                "text": "number"
+              },
+              "description": "Number of columns (1-15)",
+              "name": "span"
+            },
+            {
+              "type": {
+                "text": "number"
+              },
+              "description": "Start column (1-15)",
+              "name": "y"
+            },
+            {
+              "type": {
+                "text": "number"
+              },
+              "description": "Start position on the line axis (1-60)",
+              "name": "x"
+            },
+            {
+              "type": {
+                "text": "number"
+              },
+              "description": "Lines occupied on the line axis (1-60)",
+              "name": "w"
+            }
+          ],
+          "superclass": {
+            "name": "PlacedElement",
+            "module": "/src/internal/base.ts"
+          },
+          "tagName": "shinbun-box",
+          "customElement": true
+        },
+        {
+          "kind": "class",
+          "description": "Advertisement slot. Combine sizes with spaces, e.g. `kind=\"kijishita zen5\"`.",
+          "name": "ShinbunAd",
+          "slots": [
+            {
+              "description": "Advertisement content",
+              "name": ""
+            }
+          ],
+          "members": [
+            {
+              "kind": "field",
+              "name": "defaultTag",
+              "type": {
+                "text": "string"
+              },
+              "static": true,
+              "default": "\"shinbun-ad\""
+            },
+            {
+              "kind": "field",
+              "name": "block",
+              "type": {
+                "text": "string"
+              },
+              "static": true,
+              "default": "\"sb-ad\""
+            },
+            {
+              "kind": "field",
+              "name": "role",
+              "type": {
+                "text": "string"
+              },
+              "static": true,
+              "default": "\"group\""
+            },
+            {
+              "kind": "field",
+              "name": "choices",
+              "type": {
+                "text": "object"
+              },
+              "static": true,
+              "default": "{ kind: { prefix: \"sb-ad--\", values: AD_KINDS, multiple: true } }"
+            }
+          ],
+          "attributes": [
+            {
+              "type": {
+                "text": "string"
+              },
+              "description": "Space-separated sizes: kijishita, zen, han, zen5, han5, zen2, han2, full",
+              "name": "kind"
+            },
+            {
+              "type": {
+                "text": "number"
+              },
+              "description": "Number of columns (1-15)",
+              "name": "span"
+            },
+            {
+              "type": {
+                "text": "number"
+              },
+              "description": "Start column (1-15)",
+              "name": "y"
+            },
+            {
+              "type": {
+                "text": "number"
+              },
+              "description": "Start position on the line axis (1-60)",
+              "name": "x"
+            },
+            {
+              "type": {
+                "text": "number"
+              },
+              "description": "Lines occupied on the line axis (1-60)",
+              "name": "w"
+            }
+          ],
+          "superclass": {
+            "name": "PlacedElement",
+            "module": "/src/internal/base.ts"
+          },
+          "tagName": "shinbun-ad",
+          "customElement": true
+        },
+        {
+          "kind": "class",
+          "description": "Rule line.",
+          "name": "ShinbunRule",
+          "members": [
+            {
+              "kind": "field",
+              "name": "defaultTag",
+              "type": {
+                "text": "string"
+              },
+              "static": true,
+              "default": "\"shinbun-rule\""
+            },
+            {
+              "kind": "field",
+              "name": "block",
+              "type": {
+                "text": "string"
+              },
+              "static": true,
+              "default": "\"sb-rule\""
+            },
+            {
+              "kind": "field",
+              "name": "role",
+              "type": {
+                "text": "string"
+              },
+              "static": true,
+              "default": "\"separator\""
+            },
+            {
+              "kind": "field",
+              "name": "flags",
+              "type": {
+                "text": "object"
+              },
+              "static": true,
+              "default": "{ double: \"sb-rule--double\" }"
+            }
+          ],
+          "attributes": [
+            {
+              "type": {
+                "text": "boolean"
+              },
+              "description": "Double rule",
+              "name": "double"
+            }
+          ],
+          "superclass": {
+            "name": "ShinbunElement",
+            "module": "/src/internal/base.ts"
+          },
+          "tagName": "shinbun-rule",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "ShinbunBox",
+          "declaration": {
+            "name": "ShinbunBox",
+            "module": "src/elements/blocks.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "ShinbunAd",
+          "declaration": {
+            "name": "ShinbunAd",
+            "module": "src/elements/blocks.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "ShinbunRule",
+          "declaration": {
+            "name": "ShinbunRule",
+            "module": "src/elements/blocks.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/elements/headings.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "Kicker: the small line above a headline. Spans all columns inside an article.",
+          "name": "ShinbunKicker",
+          "slots": [
+            {
+              "description": "Text",
+              "name": ""
+            }
+          ],
+          "members": [
+            {
+              "kind": "field",
+              "name": "defaultTag",
+              "type": {
+                "text": "string"
+              },
+              "static": true,
+              "default": "\"shinbun-kicker\""
+            },
+            {
+              "kind": "field",
+              "name": "block",
+              "type": {
+                "text": "string"
+              },
+              "static": true,
+              "default": "\"sb-kicker\""
+            },
+            {
+              "kind": "field",
+              "name": "role",
+              "type": {
+                "text": "string"
+              },
+              "static": true,
+              "default": "\"paragraph\""
+            }
+          ],
+          "superclass": {
+            "name": "ShinbunElement",
+            "module": "/src/internal/base.ts"
+          },
+          "tagName": "shinbun-kicker",
+          "customElement": true
+        },
+        {
+          "kind": "class",
+          "description": "Sleeve headline: the secondary headline beside the main one. Spans all columns inside an article.",
+          "name": "ShinbunSleeve",
+          "slots": [
+            {
+              "description": "Text",
+              "name": ""
+            }
+          ],
+          "members": [
+            {
+              "kind": "field",
+              "name": "defaultTag",
+              "type": {
+                "text": "string"
+              },
+              "static": true,
+              "default": "\"shinbun-sleeve\""
+            },
+            {
+              "kind": "field",
+              "name": "block",
+              "type": {
+                "text": "string"
+              },
+              "static": true,
+              "default": "\"sb-sleeve\""
+            },
+            {
+              "kind": "field",
+              "name": "role",
+              "type": {
+                "text": "string"
+              },
+              "static": true,
+              "default": "\"paragraph\""
+            }
+          ],
+          "superclass": {
+            "name": "ShinbunElement",
+            "module": "/src/internal/base.ts"
+          },
+          "tagName": "shinbun-sleeve",
+          "customElement": true
+        },
+        {
+          "kind": "class",
+          "description": "Subhead inside an article. Spans all columns.",
+          "name": "ShinbunSub",
+          "slots": [
+            {
+              "description": "Text",
+              "name": ""
+            }
+          ],
+          "members": [
+            {
+              "kind": "field",
+              "name": "defaultTag",
+              "type": {
+                "text": "string"
+              },
+              "static": true,
+              "default": "\"shinbun-sub\""
+            },
+            {
+              "kind": "field",
+              "name": "block",
+              "type": {
+                "text": "string"
+              },
+              "static": true,
+              "default": "\"sb-sub\""
+            },
+            {
+              "kind": "field",
+              "name": "role",
+              "type": {
+                "text": "string"
+              },
+              "static": true,
+              "default": "\"paragraph\""
+            }
+          ],
+          "superclass": {
+            "name": "ShinbunElement",
+            "module": "/src/internal/base.ts"
+          },
+          "tagName": "shinbun-sub",
+          "customElement": true
+        },
+        {
+          "kind": "class",
+          "description": "Horizontal headline set in a vertical paper. Place it in the page grid with `span`, `y`, `x`, `w`.",
+          "name": "ShinbunYoko",
+          "slots": [
+            {
+              "description": "Text",
+              "name": ""
+            }
+          ],
+          "members": [
+            {
+              "kind": "field",
+              "name": "defaultTag",
+              "type": {
+                "text": "string"
+              },
+              "static": true,
+              "default": "\"shinbun-yoko\""
+            },
+            {
+              "kind": "field",
+              "name": "block",
+              "type": {
+                "text": "string"
+              },
+              "static": true,
+              "default": "\"sb-yoko\""
+            },
+            {
+              "kind": "field",
+              "name": "role",
+              "type": {
+                "text": "string"
+              },
+              "static": true,
+              "default": "\"heading\""
+            },
+            {
+              "kind": "field",
+              "name": "flags",
+              "type": {
+                "text": "object"
+              },
+              "static": true,
+              "default": "{ reverse: \"sb-yoko--reverse\" }"
+            },
+            {
+              "kind": "field",
+              "name": "extraAttributes",
+              "type": {
+                "text": "array"
+              },
+              "static": true,
+              "default": "[\"level\"]"
+            }
+          ],
+          "attributes": [
+            {
+              "type": {
+                "text": "number"
+              },
+              "description": "Number of columns (1-15)",
+              "name": "span"
+            },
+            {
+              "type": {
+                "text": "number"
+              },
+              "description": "Start column (1-15)",
+              "name": "y"
+            },
+            {
+              "type": {
+                "text": "number"
+              },
+              "description": "Start position on the line axis (1-60)",
+              "name": "x"
+            },
+            {
+              "type": {
+                "text": "number"
+              },
+              "description": "Lines occupied on the line axis (1-60)",
+              "name": "w"
+            },
+            {
+              "type": {
+                "text": "boolean"
+              },
+              "description": "White text on a dark background",
+              "name": "reverse"
+            },
+            {
+              "type": {
+                "text": "number"
+              },
+              "description": "Heading level 1-6 (default: 2)",
+              "name": "level"
+            }
+          ],
+          "superclass": {
+            "name": "PlacedElement",
+            "module": "/src/internal/base.ts"
+          },
+          "tagName": "shinbun-yoko",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "ShinbunKicker",
+          "declaration": {
+            "name": "ShinbunKicker",
+            "module": "src/elements/headings.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "ShinbunSleeve",
+          "declaration": {
+            "name": "ShinbunSleeve",
+            "module": "src/elements/headings.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "ShinbunSub",
+          "declaration": {
+            "name": "ShinbunSub",
+            "module": "src/elements/headings.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "ShinbunYoko",
+          "declaration": {
+            "name": "ShinbunYoko",
+            "module": "src/elements/headings.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/elements/headline.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "Headline. Spans all columns of its article. Exposed as `role=\"heading\"`.",
+          "name": "ShinbunHeadline",
+          "cssProperties": [
+            {
+              "description": "Scale of xl relative to the body font size",
+              "name": "--sb-h-xl"
+            },
+            {
+              "description": "Scale of l",
+              "name": "--sb-h-l"
+            },
+            {
+              "description": "Scale of m",
+              "name": "--sb-h-m"
+            },
+            {
+              "description": "Scale of s",
+              "name": "--sb-h-s"
+            }
+          ],
+          "slots": [
+            {
+              "description": "Headline text",
+              "name": ""
+            }
+          ],
+          "members": [
+            {
+              "kind": "field",
+              "name": "defaultTag",
+              "type": {
+                "text": "string"
+              },
+              "static": true,
+              "default": "\"shinbun-headline\""
+            },
+            {
+              "kind": "field",
+              "name": "block",
+              "type": {
+                "text": "string"
+              },
+              "static": true,
+              "default": "\"sb-headline\""
+            },
+            {
+              "kind": "field",
+              "name": "role",
+              "type": {
+                "text": "string"
+              },
+              "static": true,
+              "default": "\"heading\""
+            },
+            {
+              "kind": "field",
+              "name": "choices",
+              "type": {
+                "text": "object"
+              },
+              "static": true,
+              "default": "{ size: { prefix: \"sb-headline--\", values: SIZE } }"
+            },
+            {
+              "kind": "field",
+              "name": "extraAttributes",
+              "type": {
+                "text": "array"
+              },
+              "static": true,
+              "default": "[\"level\"]"
+            },
+            {
+              "kind": "field",
+              "name": "size",
+              "type": {
+                "text": "HeadlineSize | null"
+              }
+            }
+          ],
+          "attributes": [
+            {
+              "type": {
+                "text": "\"xl\"|\"l\"|\"m\"|\"s\""
+              },
+              "description": "Size (default: m)",
+              "name": "size"
+            },
+            {
+              "type": {
+                "text": "number"
+              },
+              "description": "Heading level 1-6 (default: 2)",
+              "name": "level"
+            }
+          ],
+          "superclass": {
+            "name": "ShinbunElement",
+            "module": "/src/internal/base.ts"
+          },
+          "tagName": "shinbun-headline",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "ShinbunHeadline",
+          "declaration": {
+            "name": "ShinbunHeadline",
+            "module": "src/elements/headline.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/elements/inline.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "Emphasis dots (sesame) over the text.",
+          "name": "ShinbunEmphasis",
+          "slots": [
+            {
+              "description": "Text",
+              "name": ""
+            }
+          ],
+          "members": [
+            {
+              "kind": "field",
+              "name": "defaultTag",
+              "type": {
+                "text": "string"
+              },
+              "static": true,
+              "default": "\"shinbun-emphasis\""
+            },
+            {
+              "kind": "field",
+              "name": "block",
+              "type": {
+                "text": "string"
+              },
+              "static": true,
+              "default": "\"sb-emphasis\""
+            }
+          ],
+          "superclass": {
+            "name": "ShinbunElement",
+            "module": "/src/internal/base.ts"
+          },
+          "tagName": "shinbun-emphasis",
+          "customElement": true
+        },
+        {
+          "kind": "class",
+          "description": "Tate-chu-yoko: sets a short run of digits or letters horizontally in one character cell.",
+          "name": "ShinbunTcy",
+          "slots": [
+            {
+              "description": "Text",
+              "name": ""
+            }
+          ],
+          "members": [
+            {
+              "kind": "field",
+              "name": "defaultTag",
+              "type": {
+                "text": "string"
+              },
+              "static": true,
+              "default": "\"shinbun-tcy\""
+            },
+            {
+              "kind": "field",
+              "name": "block",
+              "type": {
+                "text": "string"
+              },
+              "static": true,
+              "default": "\"sb-tcy\""
+            }
+          ],
+          "superclass": {
+            "name": "ShinbunElement",
+            "module": "/src/internal/base.ts"
+          },
+          "tagName": "shinbun-tcy",
+          "customElement": true
+        },
+        {
+          "kind": "class",
+          "description": "Sets Latin text rotated 90 degrees in vertical writing.",
+          "name": "ShinbunSideways",
+          "slots": [
+            {
+              "description": "Text",
+              "name": ""
+            }
+          ],
+          "members": [
+            {
+              "kind": "field",
+              "name": "defaultTag",
+              "type": {
+                "text": "string"
+              },
+              "static": true,
+              "default": "\"shinbun-sideways\""
+            },
+            {
+              "kind": "field",
+              "name": "block",
+              "type": {
+                "text": "string"
+              },
+              "static": true,
+              "default": "\"sb-sideways\""
+            }
+          ],
+          "superclass": {
+            "name": "ShinbunElement",
+            "module": "/src/internal/base.ts"
+          },
+          "tagName": "shinbun-sideways",
+          "customElement": true
+        },
+        {
+          "kind": "class",
+          "description": "Sets a run of text horizontally inside vertical writing.",
+          "name": "ShinbunHorizontal",
+          "slots": [
+            {
+              "description": "Text",
+              "name": ""
+            }
+          ],
+          "members": [
+            {
+              "kind": "field",
+              "name": "defaultTag",
+              "type": {
+                "text": "string"
+              },
+              "static": true,
+              "default": "\"shinbun-horizontal\""
+            },
+            {
+              "kind": "field",
+              "name": "block",
+              "type": {
+                "text": "string"
+              },
+              "static": true,
+              "default": "\"sb-horizontal\""
+            }
+          ],
+          "superclass": {
+            "name": "ShinbunElement",
+            "module": "/src/internal/base.ts"
+          },
+          "tagName": "shinbun-horizontal",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "ShinbunEmphasis",
+          "declaration": {
+            "name": "ShinbunEmphasis",
+            "module": "src/elements/inline.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "ShinbunTcy",
+          "declaration": {
+            "name": "ShinbunTcy",
+            "module": "src/elements/inline.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "ShinbunSideways",
+          "declaration": {
+            "name": "ShinbunSideways",
+            "module": "src/elements/inline.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "ShinbunHorizontal",
+          "declaration": {
+            "name": "ShinbunHorizontal",
+            "module": "src/elements/inline.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/elements/page.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "Page grid. Lays out articles and photos in columns.",
+          "name": "ShinbunPage",
+          "cssProperties": [
+            {
+              "description": "Columns per page in vertical writing",
+              "name": "--sb-dan"
+            },
+            {
+              "description": "Lines in the coordinate grid",
+              "name": "--sb-lines"
+            }
+          ],
+          "slots": [
+            {
+              "description": "shinbun-article, shinbun-photo, shinbun-nameplate, shinbun-box The page becomes keyboard-focusable (`tabindex=\"0\"`) while its content scrolls.",
+              "name": ""
+            }
+          ],
+          "members": [
+            {
+              "kind": "field",
+              "name": "defaultTag",
+              "type": {
+                "text": "string"
+              },
+              "static": true,
+              "default": "\"shinbun-page\""
+            },
+            {
+              "kind": "field",
+              "name": "block",
+              "type": {
+                "text": "string"
+              },
+              "static": true,
+              "default": "\"sb-page\""
+            },
+            {
+              "kind": "field",
+              "name": "flags",
+              "type": {
+                "text": "object"
+              },
+              "static": true,
+              "default": "{ grid: \"sb-page--grid\" }"
+            },
+            {
+              "kind": "field",
+              "name": "#resize",
+              "privacy": "private",
+              "type": {
+                "text": "ResizeObserver | null"
+              },
+              "default": "null"
+            },
+            {
+              "kind": "field",
+              "name": "#mutation",
+              "privacy": "private",
+              "type": {
+                "text": "MutationObserver | null"
+              },
+              "default": "null"
+            },
+            {
+              "kind": "field",
+              "name": "#managedTabindex",
+              "privacy": "private",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false"
+            },
+            {
+              "kind": "method",
+              "name": "#syncFocusable",
+              "privacy": "private",
+              "return": {
+                "type": {
+                  "text": "void"
+                }
+              }
+            },
+            {
+              "kind": "field",
+              "name": "grid",
+              "type": {
+                "text": "boolean"
+              }
+            }
+          ],
+          "attributes": [
+            {
+              "type": {
+                "text": "boolean"
+              },
+              "description": "Coordinate grid: fix the line axis too and fit articles into rectangles",
+              "name": "grid"
+            }
+          ],
+          "superclass": {
+            "name": "ShinbunElement",
+            "module": "/src/internal/base.ts"
+          },
+          "tagName": "shinbun-page",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "ShinbunPage",
+          "declaration": {
+            "name": "ShinbunPage",
+            "module": "src/elements/page.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/elements/paper.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "Outer frame of a page: writing mode, theme and the page grid settings.",
+          "name": "ShinbunPaper",
+          "cssProperties": [
+            {
+              "description": "Paper color",
+              "name": "--sb-paper"
+            },
+            {
+              "description": "Text color",
+              "name": "--sb-ink"
+            },
+            {
+              "description": "Accent color",
+              "name": "--sb-accent"
+            },
+            {
+              "description": "Body font",
+              "name": "--sb-font-body"
+            },
+            {
+              "description": "Gap between columns and articles",
+              "name": "--sb-gap"
+            }
+          ],
+          "slots": [
+            {
+              "description": "shinbun-page, nameplate, folio",
+              "name": ""
+            }
+          ],
+          "members": [
+            {
+              "kind": "field",
+              "name": "defaultTag",
+              "type": {
+                "text": "string"
+              },
+              "static": true,
+              "default": "\"shinbun-paper\""
+            },
+            {
+              "kind": "field",
+              "name": "block",
+              "type": {
+                "text": "string"
+              },
+              "static": true,
+              "default": "\"sb-paper\""
+            },
+            {
+              "kind": "field",
+              "name": "choices",
+              "type": {
+                "text": "object"
+              },
+              "static": true,
+              "default": "{ preset: { prefix: \"sb-paper--\", values: [\"15dan\", \"12dan\"] } }"
+            },
+            {
+              "kind": "field",
+              "name": "extraAttributes",
+              "type": {
+                "text": "array"
+              },
+              "static": true,
+              "default": "[\"writing\", \"theme\", \"debug\", \"responsive\", \"auto-tcy\", \"dan\", \"dan-h\", \"chars\", \"lines\", \"font-size\"]"
+            },
+            {
+              "kind": "field",
+              "name": "#stopResponsive",
+              "privacy": "private",
+              "type": {
+                "text": "(() => void) | null"
+              },
+              "default": "null"
+            },
+            {
+              "kind": "field",
+              "name": "writing",
+              "type": {
+                "text": "Writing"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "theme",
+              "type": {
+                "text": "Theme | null"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "#dan",
+              "privacy": "private",
+              "type": {
+                "text": "number | null"
+              },
+              "default": "null"
+            },
+            {
+              "kind": "method",
+              "name": "#applyWriting",
+              "privacy": "private",
+              "return": {
+                "type": {
+                  "text": "void"
+                }
+              },
+              "parameters": [
+                {
+                  "name": "writing",
+                  "type": {
+                    "text": "Writing | null"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "#applyDan",
+              "privacy": "private",
+              "return": {
+                "type": {
+                  "text": "void"
+                }
+              }
+            },
+            {
+              "kind": "method",
+              "name": "#syncResponsive",
+              "privacy": "private",
+              "return": {
+                "type": {
+                  "text": "void"
+                }
+              }
+            },
+            {
+              "kind": "method",
+              "name": "#syncTcy",
+              "privacy": "private",
+              "return": {
+                "type": {
+                  "text": "void"
+                }
+              }
+            },
+            {
+              "kind": "method",
+              "name": "applyTcy",
+              "return": {
+                "type": {
+                  "text": "number"
+                }
+              },
+              "description": "Wraps two-digit numbers in `sb-tcy` spans. Returns the number of spans added."
+            },
+            {
+              "kind": "method",
+              "name": "overflow",
+              "return": {
+                "type": {
+                  "text": "Element[]"
+                }
+              },
+              "description": "Returns articles in the coordinate grid whose text overflows the box."
+            }
+          ],
+          "attributes": [
+            {
+              "type": {
+                "text": "\"vertical\"|\"horizontal\""
+              },
+              "description": "Writing mode (default: vertical)",
+              "name": "writing"
+            },
+            {
+              "type": {
+                "text": "\"light\"|\"dark\"|\"auto\""
+              },
+              "description": "Color scheme",
+              "name": "theme"
+            },
+            {
+              "type": {
+                "text": "\"15dan\"|\"12dan\""
+              },
+              "description": "Column preset (15 or 12 columns)",
+              "name": "preset"
+            },
+            {
+              "type": {
+                "text": "boolean"
+              },
+              "description": "Outline the placed items",
+              "name": "debug"
+            },
+            {
+              "type": {
+                "text": "number"
+              },
+              "description": "Switch to horizontal below this viewport width in px (default: 768)",
+              "name": "responsive"
+            },
+            {
+              "type": {
+                "text": "boolean"
+              },
+              "description": "Wrap two-digit numbers for tate-chu-yoko",
+              "name": "auto-tcy"
+            },
+            {
+              "type": {
+                "text": "number"
+              },
+              "description": "Columns per page in vertical writing",
+              "name": "dan"
+            },
+            {
+              "type": {
+                "text": "number"
+              },
+              "description": "Columns per page in horizontal writing",
+              "name": "dan-h"
+            },
+            {
+              "type": {
+                "text": "number"
+              },
+              "description": "Characters per column in vertical writing",
+              "name": "chars"
+            },
+            {
+              "type": {
+                "text": "number"
+              },
+              "description": "Lines in the coordinate grid",
+              "name": "lines"
+            },
+            {
+              "type": {
+                "text": "string"
+              },
+              "description": "Body font size, e.g. 0.8rem",
+              "name": "font-size"
+            }
+          ],
+          "superclass": {
+            "name": "ShinbunElement",
+            "module": "/src/internal/base.ts"
+          },
+          "tagName": "shinbun-paper",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "ShinbunPaper",
+          "declaration": {
+            "name": "ShinbunPaper",
+            "module": "src/elements/paper.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/elements/photo.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "Photo or figure with an optional caption. Spans all columns inside an article;\nas a direct child of the page it can be placed with `span`, `y`, `x`, `w`.\nIn vertical writing the image height is the column length, so `ratio` sets the width relative to it.",
+          "name": "ShinbunPhoto",
+          "cssProperties": [
+            {
+              "description": "Background color before the image loads",
+              "name": "--sb-photo-bg"
+            },
+            {
+              "description": "Aspect ratio (also set by `ratio`)",
+              "name": "--sb-photo-ratio"
+            }
+          ],
+          "slots": [
+            {
+              "description": "img and figcaption",
+              "name": ""
+            }
+          ],
+          "members": [
+            {
+              "kind": "field",
+              "name": "defaultTag",
+              "type": {
+                "text": "string"
+              },
+              "static": true,
+              "default": "\"shinbun-photo\""
+            },
+            {
+              "kind": "field",
+              "name": "block",
+              "type": {
+                "text": "string"
+              },
+              "static": true,
+              "default": "\"sb-photo\""
+            },
+            {
+              "kind": "field",
+              "name": "role",
+              "type": {
+                "text": "string"
+              },
+              "static": true,
+              "default": "\"figure\""
+            },
+            {
+              "kind": "field",
+              "name": "parts",
+              "type": {
+                "text": "object"
+              },
+              "static": true,
+              "default": "{ img: \"sb-photo__img\", figcaption: \"sb-photo__caption\" }"
+            },
+            {
+              "kind": "field",
+              "name": "extraAttributes",
+              "type": {
+                "text": "array"
+              },
+              "static": true,
+              "default": "[\"ratio\"]"
+            }
+          ],
+          "attributes": [
+            {
+              "type": {
+                "text": "string"
+              },
+              "description": "Aspect ratio (width / height), e.g. `10 / 11`",
+              "name": "ratio"
+            },
+            {
+              "type": {
+                "text": "number"
+              },
+              "description": "Number of columns when placed in the page (1-15)",
+              "name": "span"
+            },
+            {
+              "type": {
+                "text": "number"
+              },
+              "description": "Start column when placed in the page (1-15)",
+              "name": "y"
+            },
+            {
+              "type": {
+                "text": "number"
+              },
+              "description": "Start position on the line axis when placed in the page (1-60)",
+              "name": "x"
+            },
+            {
+              "type": {
+                "text": "number"
+              },
+              "description": "Lines occupied when placed in the page (1-60)",
+              "name": "w"
+            }
+          ],
+          "superclass": {
+            "name": "PlacedElement",
+            "module": "/src/internal/base.ts"
+          },
+          "tagName": "shinbun-photo",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "ShinbunPhoto",
+          "declaration": {
+            "name": "ShinbunPhoto",
+            "module": "src/elements/photo.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/elements/table.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "Wrapper for a real `table`. The wrapper keeps native table semantics: the inner `table` gets the\nshinbun-css classes, and cells with `num` are right-aligned. Tables are always set horizontally.",
+          "name": "ShinbunTable",
+          "slots": [
+            {
+              "description": "A `table` element",
+              "name": ""
+            }
+          ],
+          "members": [
+            {
+              "kind": "field",
+              "name": "defaultTag",
+              "type": {
+                "text": "string"
+              },
+              "static": true,
+              "default": "\"shinbun-table\""
+            },
+            {
+              "kind": "field",
+              "name": "extraAttributes",
+              "type": {
+                "text": "array"
+              },
+              "static": true,
+              "default": "[\"tv\"]"
+            },
+            {
+              "kind": "field",
+              "name": "#observer",
+              "privacy": "private",
+              "type": {
+                "text": "MutationObserver | null"
+              },
+              "default": "null"
+            },
+            {
+              "kind": "method",
+              "name": "#sync",
+              "privacy": "private",
+              "return": {
+                "type": {
+                  "text": "void"
+                }
+              }
+            }
+          ],
+          "attributes": [
+            {
+              "type": {
+                "text": "boolean"
+              },
+              "description": "Compact TV-listing style",
+              "name": "tv"
+            },
+            {
+              "type": {
+                "text": "number"
+              },
+              "description": "Number of columns (1-15)",
+              "name": "span"
+            },
+            {
+              "type": {
+                "text": "number"
+              },
+              "description": "Start column (1-15)",
+              "name": "y"
+            },
+            {
+              "type": {
+                "text": "number"
+              },
+              "description": "Start position on the line axis (1-60)",
+              "name": "x"
+            },
+            {
+              "type": {
+                "text": "number"
+              },
+              "description": "Lines occupied on the line axis (1-60)",
+              "name": "w"
+            }
+          ],
+          "superclass": {
+            "name": "PlacedElement",
+            "module": "/src/internal/base.ts"
+          },
+          "tagName": "shinbun-table",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "ShinbunTable",
+          "declaration": {
+            "name": "ShinbunTable",
+            "module": "src/elements/table.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/elements/text.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "Lead paragraph (summary) of an article.",
+          "name": "ShinbunLead",
+          "slots": [
+            {
+              "description": "Text",
+              "name": ""
+            }
+          ],
+          "members": [
+            {
+              "kind": "field",
+              "name": "defaultTag",
+              "type": {
+                "text": "string"
+              },
+              "static": true,
+              "default": "\"shinbun-lead\""
+            },
+            {
+              "kind": "field",
+              "name": "block",
+              "type": {
+                "text": "string"
+              },
+              "static": true,
+              "default": "\"sb-lead\""
+            },
+            {
+              "kind": "field",
+              "name": "role",
+              "type": {
+                "text": "string"
+              },
+              "static": true,
+              "default": "\"paragraph\""
+            }
+          ],
+          "superclass": {
+            "name": "ShinbunElement",
+            "module": "/src/internal/base.ts"
+          },
+          "tagName": "shinbun-lead",
+          "customElement": true
+        },
+        {
+          "kind": "class",
+          "description": "Dateline: the place and date an article was filed from.",
+          "name": "ShinbunDateline",
+          "slots": [
+            {
+              "description": "Text",
+              "name": ""
+            }
+          ],
+          "members": [
+            {
+              "kind": "field",
+              "name": "defaultTag",
+              "type": {
+                "text": "string"
+              },
+              "static": true,
+              "default": "\"shinbun-dateline\""
+            },
+            {
+              "kind": "field",
+              "name": "block",
+              "type": {
+                "text": "string"
+              },
+              "static": true,
+              "default": "\"sb-dateline\""
+            },
+            {
+              "kind": "field",
+              "name": "role",
+              "type": {
+                "text": "string"
+              },
+              "static": true,
+              "default": "\"paragraph\""
+            }
+          ],
+          "superclass": {
+            "name": "ShinbunElement",
+            "module": "/src/internal/base.ts"
+          },
+          "tagName": "shinbun-dateline",
+          "customElement": true
+        },
+        {
+          "kind": "class",
+          "description": "Byline: the author credit at the end of an article.",
+          "name": "ShinbunByline",
+          "slots": [
+            {
+              "description": "Text",
+              "name": ""
+            }
+          ],
+          "members": [
+            {
+              "kind": "field",
+              "name": "defaultTag",
+              "type": {
+                "text": "string"
+              },
+              "static": true,
+              "default": "\"shinbun-byline\""
+            },
+            {
+              "kind": "field",
+              "name": "block",
+              "type": {
+                "text": "string"
+              },
+              "static": true,
+              "default": "\"sb-byline\""
+            },
+            {
+              "kind": "field",
+              "name": "role",
+              "type": {
+                "text": "string"
+              },
+              "static": true,
+              "default": "\"paragraph\""
+            }
+          ],
+          "superclass": {
+            "name": "ShinbunElement",
+            "module": "/src/internal/base.ts"
+          },
+          "tagName": "shinbun-byline",
+          "customElement": true
+        },
+        {
+          "kind": "class",
+          "description": "Body paragraph for use where a plain `p` is not wanted. Indented by one character; `flush` removes the indent.",
+          "name": "ShinbunParagraph",
+          "slots": [
+            {
+              "description": "Text",
+              "name": ""
+            }
+          ],
+          "members": [
+            {
+              "kind": "field",
+              "name": "defaultTag",
+              "type": {
+                "text": "string"
+              },
+              "static": true,
+              "default": "\"shinbun-paragraph\""
+            },
+            {
+              "kind": "field",
+              "name": "role",
+              "type": {
+                "text": "string"
+              },
+              "static": true,
+              "default": "\"paragraph\""
+            },
+            {
+              "kind": "field",
+              "name": "flags",
+              "type": {
+                "text": "object"
+              },
+              "static": true,
+              "default": "{ flush: \"sb-flush\" }"
+            }
+          ],
+          "attributes": [
+            {
+              "type": {
+                "text": "boolean"
+              },
+              "description": "No first-line indent",
+              "name": "flush"
+            }
+          ],
+          "superclass": {
+            "name": "ShinbunElement",
+            "module": "/src/internal/base.ts"
+          },
+          "tagName": "shinbun-paragraph",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "ShinbunLead",
+          "declaration": {
+            "name": "ShinbunLead",
+            "module": "src/elements/text.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "ShinbunDateline",
+          "declaration": {
+            "name": "ShinbunDateline",
+            "module": "src/elements/text.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "ShinbunByline",
+          "declaration": {
+            "name": "ShinbunByline",
+            "module": "src/elements/text.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "ShinbunParagraph",
+          "declaration": {
+            "name": "ShinbunParagraph",
+            "module": "src/elements/text.ts"
+          }
+        }
+      ]
+    }
+  ]
+}

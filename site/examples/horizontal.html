@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>横組みのブログ風 | shinbun-components</title>
+  <link rel="stylesheet" href="../dist/shinbun-components.min.css" />
+  <script type="module" src="../dist/shinbun-components.min.js"></script>
+  <style>
+    body { margin: 0; padding: 1rem; background: #e8e2d0; }
+  </style>
+</head>
+<body>
+  <!-- All people, organizations and events here are fictional. -->
+  <shinbun-paper writing="horizontal" dan-h="6" theme="auto" font-size="0.95rem">
+    <shinbun-page>
+      <shinbun-article span="6" lead>
+        <shinbun-headline size="xl" level="1">横組みでも、新聞のように</shinbun-headline>
+        <p>shinbun-components は、縦組みと横組みを同じ段グリッドの向き違いとして扱う。横組みでは、段が左右に並び、行は上から下へ進む。</p>
+        <p>見出しは記事の全段にまたがり、本文は段ごとに流れる。ブログの記事にも、そのまま使える。</p>
+      </shinbun-article>
+
+      <shinbun-article span="3">
+        <shinbun-headline size="m">段の数は変えられる</shinbun-headline>
+        <p>dan-h 属性で、横組みの段数を指定する。画面が狭いときは、responsive 属性で自動的に横組みへ切り替えられる。</p>
+      </shinbun-article>
+
+      <shinbun-article span="3">
+        <shinbun-headline size="m">配色は OS に従う</shinbun-headline>
+        <p>theme を auto にすると、OS の明るさの設定に合わせて紙の色と墨の色が入れ替わる。</p>
+      </shinbun-article>
+    </shinbun-page>
+  </shinbun-paper>
+</body>
+</html>

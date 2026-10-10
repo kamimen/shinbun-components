@@ -1,0 +1,83 @@
+{
+  "name": "shinbun-components",
+  "version": "0.1.0",
+  "description": "shinbun-css を Web Components にしたもの。HTML のタグだけで、日本の新聞のような紙面を組める。実行時の依存なし",
+  "license": "MIT",
+  "type": "module",
+  "engines": {
+    "node": ">=22.18"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kamimen/shinbun-components.git"
+  },
+  "keywords": [
+    "web-components",
+    "custom-elements",
+    "css",
+    "japanese",
+    "vertical-writing",
+    "tategaki",
+    "newspaper"
+  ],
+  "types": "./dist/index.d.ts",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "style": "./dist/shinbun-components.css",
+  "customElements": "./custom-elements.json",
+  "jsdelivr": "./dist/shinbun-components.min.js",
+  "sideEffects": [
+    "./dist/define.js",
+    "./dist/cdn.js",
+    "./dist/shinbun-components.min.js",
+    "./dist/*.css"
+  ],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    },
+    "./define": {
+      "types": "./dist/define.d.ts",
+      "default": "./dist/define.js"
+    },
+    "./css": "./dist/shinbun-components.css",
+    "./css/min": "./dist/shinbun-components.min.css",
+    "./custom-elements.json": "./custom-elements.json",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "dist",
+    "custom-elements.json",
+    "docs",
+    "README_en.md"
+  ],
+  "scripts": {
+    "typecheck": "tsc --noEmit",
+    "manifest": "cem analyze --config custom-elements-manifest.config.mjs",
+    "build": "node scripts/build.mjs",
+    "docs": "node scripts/docs.mjs",
+    "check": "node scripts/check.mjs",
+    "test:pack": "node scripts/pack-test.mjs",
+    "test:unit": "node --test \"test/unit/*.test.ts\"",
+    "test:browser": "wtr",
+    "test": "npm run test:unit && npm run test:browser && npm run test:pack",
+    "verify": "npm run typecheck && npm run build && npm run check && npm test && npm run docs",
+    "serve": "node scripts/serve.mjs",
+    "prepublishOnly": "npm run verify"
+  },
+  "devDependencies": {
+    "@custom-elements-manifest/analyzer": "^0.10.4",
+    "@open-wc/testing": "^4.0.0",
+    "@types/node": "^22.0.0",
+    "@web/dev-server-esbuild": "^1.0.2",
+    "@web/test-runner": "^0.19.0",
+    "@web/test-runner-playwright": "^0.11.0",
+    "esbuild": "^0.25.0",
+    "typescript": "^5.6.0"
+  },
+  "shinbunCss": {
+    "version": "0.1.0",
+    "source": "https://github.com/kamimen/shinbun-css/tree/v0.1.0"
+  }
+}
