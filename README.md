@@ -118,13 +118,13 @@ shinbun-css requires `@layer`, CSS nesting and `light-dark()`: Chrome 123, Firef
 
 | Browser | Status |
 |---|---|
-| Google Chrome 154 | Verified: 144 browser tests and the example pages |
-| WebKit 27.2 (Playwright build, the Safari engine) | Verified: 144 browser tests |
-| Firefox | **Not verified.** Tests are configured, but the Playwright build of Firefox does not start on the author's machine (macOS 27) |
+| Google Chrome 154 (macOS) | 144 browser tests, and the example pages checked by eye |
+| Chromium 156 (Playwright, Linux CI) | 144 browser tests |
+| Firefox 157 (Playwright, Linux CI) | 144 browser tests; not checked by eye |
+| WebKit (Playwright; macOS 27.2 locally, Linux in CI) | 144 browser tests |
+| Safari itself | Not tested |
 
-Reports from Safari and Firefox are welcome.
-
-Text layout differs slightly between browsers: in CI, the same text needed more room in Firefox than in Chrome and WebKit. Use `overflow()` in the browsers you target, and leave some slack in coordinate-placed articles.
+Reports from Safari are welcome. Text layout can differ slightly between browsers, so use `overflow()` in the browsers you target and leave some slack in coordinate-placed articles.
 
 ## Limitations
 

@@ -116,13 +116,13 @@ shinbun-css が使う `@layer`、CSS ネスティング、`light-dark()` に必�
 
 | ブラウザ | 状態 |
 |---|---|
-| Google Chrome 154 | 確認済み。ブラウザテスト 144 件と、例ページの目視確認 |
-| WebKit 27.2（Playwright 版。Safari と同じエンジン） | 確認済み。ブラウザテスト 144 件 |
-| Firefox | **未確認**。テストは設定済みですが、作者の環境（macOS 27）では Playwright 版の Firefox が起動せず、実行できていません |
+| Google Chrome 154（macOS） | ブラウザテスト 144 件と、例ページの目視確認 |
+| Chromium 156（Playwright、Linux の CI） | ブラウザテスト 144 件 |
+| Firefox 157（Playwright、Linux の CI） | ブラウザテスト 144 件。目視は未確認 |
+| WebKit（Playwright。手元は macOS 27.2、CI は Linux） | ブラウザテスト 144 件 |
+| Safari 本体 | 未確認 |
 
-Safari 本体と Firefox での確認は歓迎します。
-
-組版はブラウザによって少し違います。CI では、同じ本文が Chrome・WebKit では収まっても Firefox では溢れました。座標指定の記事には余裕を持たせ、対象のブラウザで `overflow()` を確認してください。
+Safari での確認は歓迎します。組版はブラウザによって少し違うので、対象のブラウザで `overflow()` を確認し、座標指定の記事には余裕を持たせてください。
 
 ## 制限
 

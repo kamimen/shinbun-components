@@ -17,4 +17,4 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and
 - Type definitions (`.d.ts`) and `custom-elements.json`
 - CSS bundling shinbun-css v0.1.0 (`dist/shinbun-components.css`) and its class manifest (`src/css/shinbun-css.manifest.json`)
 - API documentation generator (`npm run docs`) and example pages
-- Tests: 12 unit tests, 144 browser tests (Chrome and WebKit) including a check that every shinbun-css class is produced, axe accessibility checks on the example pages, and a pack test that installs the tarball and type-checks a consumer. Firefox is configured but could not be run on the development machine.
+- Tests: 12 unit tests, 144 browser tests (Chromium, Firefox and WebKit) including a check that every shinbun-css class is produced, axe accessibility checks on the example pages, and a pack test that installs the tarball and type-checks a consumer. CI runs all three on Linux.
