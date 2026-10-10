@@ -7,7 +7,7 @@ describe("debug: firefox overflow", () => {
     const html = await (await fetch("/site/examples/front.html")).text();
     const doc = new DOMParser().parseFromString(html, "text/html");
     const paper = await mount(doc.querySelector("shinbun-paper")!.outerHTML);
-    const art = [...paper.querySelectorAll("shinbun-article")].find((a) => a.textContent?.includes("朗読会"))!;
+    const art = [...paper.querySelectorAll("shinbun-article")].find((a) => a.querySelector("shinbun-headline")?.textContent === "朗読会に40人")!;
     const r = (e: Element | Range) => {
       const b = e.getBoundingClientRect();
       return [b.left, b.top, b.right, b.bottom].map(Math.round).join(",");
@@ -25,6 +25,6 @@ describe("debug: firefox overflow", () => {
       }
     };
     art.childNodes.forEach((c) => walk(c, 1));
-    console.log("GEOMETRY\n" + lines.join("\n"));
+    console.log("GEOMETRY2 " + navigator.userAgent.match(/Firefox|Chrome|AppleWebKit/)?.[0] + "\n" + lines.join("\n"));
   });
 });
