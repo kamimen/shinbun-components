@@ -50,7 +50,7 @@
     "dist",
     "custom-elements.json",
     "docs",
-    "README_en.md"
+    "README_ja.md"
   ],
   "scripts": {
     "typecheck": "tsc --noEmit",

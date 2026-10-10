@@ -56,7 +56,7 @@ function checkMarkup(label, text) {
   }
 }
 for (const [name, entry] of Object.entries(coverage)) checkMarkup(`coverage.json ${name}`, entry.html);
-const markupFiles = ["README.md", "README_en.md", ...walk("docs", ".md"), ...walk("site/examples", ".html"), ...walk("site/snippets", ".html")];
+const markupFiles = ["README.md", "README_ja.md", ...walk("docs", ".md"), ...walk("site/examples", ".html"), ...walk("site/snippets", ".html")];
 for (const f of markupFiles) if (existsSync(new URL(f, root))) checkMarkup(f, read(f));
 
 function walk(dir, ext) {

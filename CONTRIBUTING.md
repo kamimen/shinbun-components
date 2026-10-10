@@ -16,7 +16,7 @@ npm run verify
 4. Examples must use fictional newspapers, people, organizations and events. Reproducing a real newspaper's logo, typeface or design is not accepted.
 5. For visual changes, attach screenshots and the browser versions you checked.
 6. New examples must report zero overflowing articles from `overflow()`.
-7. Code comments and documents are written in English. The README is also kept in Japanese.
+7. Code comments and documents are written in English. A Japanese README is kept as `README_ja.md`.
 
 ## Browsers
 

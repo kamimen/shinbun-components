@@ -29,7 +29,7 @@ describe("shinbun-paper", () => {
   it("sb-paper のクラスが付き、ブロック要素になる", async () => {
     const el = await mount<ShinbunPaper>(`<shinbun-paper></shinbun-paper>`);
     expect(el.classList.contains("sb-paper")).to.equal(true);
-    expect(css(el).display).to.equal("block");
+    expect(["block", "flow-root"]).to.include(css(el).display);
   });
 
   it("既定は縦組みで、writing=horizontal で横組みになる", async () => {

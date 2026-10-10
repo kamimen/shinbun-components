@@ -28,11 +28,14 @@
     text-indent: 0;
   }
 
-  /* A vertical page shrinks to its content inside the horizontal paper and sat on the left;
-     vertical text starts at the right edge, so push the page there */
+  /* A vertical page shrinks to its content inside the horizontal paper and sat on the left, but vertical
+     text starts at the right edge. A float shrinks to fit and sits on the right in every browser;
+     flow-root keeps the paper around it (auto margins did not work in Firefox) */
+  .sb-paper:not([data-sb-writing="horizontal"]) {
+    display: flow-root;
+  }
   .sb-paper:not([data-sb-writing="horizontal"]) .sb-page {
-    width: fit-content;
-    margin-left: auto;
+    float: right;
   }
 
   /* A photo placed in the page without `w` has no height to fill, so give the image its ratio */
