@@ -124,6 +124,8 @@ shinbun-css requires `@layer`, CSS nesting and `light-dark()`: Chrome 123, Firef
 
 Reports from Safari and Firefox are welcome.
 
+Text layout differs slightly between browsers: in CI, the same text needed more room in Firefox than in Chrome and WebKit. Use `overflow()` in the browsers you target, and leave some slack in coordinate-placed articles.
+
 ## Limitations
 
 The limitations of shinbun-css apply:

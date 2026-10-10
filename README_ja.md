@@ -122,6 +122,8 @@ shinbun-css が使う `@layer`、CSS ネスティング、`light-dark()` に必�
 
 Safari 本体と Firefox での確認は歓迎します。
 
+組版はブラウザによって少し違います。CI では、同じ本文が Chrome・WebKit では収まっても Firefox では溢れました。座標指定の記事には余裕を持たせ、対象のブラウザで `overflow()` を確認してください。
+
 ## 制限
 
 shinbun-css の制限を引き継ぎます。
