@@ -27,13 +27,14 @@ Vertical writing can only be verified in a real browser. `npm run test:browser` 
 1. Update `version` in `package.json` and the heading in `CHANGELOG.md`.
 2. Run `npm run verify` and commit the result, including `dist/` and `custom-elements.json` (the CDN serves `dist/` straight from the tag).
 3. Tag and push: `git tag vX.Y.Z && git push origin main vX.Y.Z`.
-4. The Release workflow checks that the tag matches `package.json`, publishes to npm with provenance, attaches `dist/` as a zip and creates the GitHub Release. The Pages workflow publishes the API documentation from `main`.
-5. Check `https://cdn.jsdelivr.net/npm/@kamimen/shinbun-components@X.Y.Z/dist/shinbun-components.min.js` loads.
+4. The Release workflow checks that the tag matches `package.json`, runs the checks, **stages** the package on npm with provenance, attaches `dist/` as a zip and creates the GitHub Release. The Pages workflow publishes the API documentation from `main`.
+5. Approve the staged package with 2FA: `npm stage list @kamimen/shinbun-components`, then `npm stage approve <stage-id>` (or use Staged Packages on npmjs.com). Only then does it appear on npm.
+6. Check `https://cdn.jsdelivr.net/npm/@kamimen/shinbun-components@X.Y.Z/dist/shinbun-components.min.js` loads.
 
-### One-time npm setup (no token needed)
+### npm setup
 
-The Release workflow publishes with npm Trusted Publishing, so no npm token is stored in GitHub.
+The workflow stages with a granular access token stored as the GitHub secret `NPM_TOKEN`. Create it on npmjs.com with **Read and write (stage only)** on the `@kamimen` scope, no organization access, and Bypass 2FA left off. Such a token can only stage, so a leaked token cannot publish; publishing always needs your 2FA at approval.
 
-1. Publish the first version by hand, because a package must exist before it can have a trusted publisher: `npm publish --access public` (npm asks for your 2FA code; a scoped package is private unless you pass `--access public`).
-2. On npmjs.com, open the package, then Settings, then Trusted Publisher, and choose GitHub Actions with owner `kamimen`, repository `shinbun-components` and workflow `release.yml`.
-3. From then on, pushing a `v*` tag publishes.
+```sh
+pbpaste | gh secret set NPM_TOKEN --repo kamimen/shinbun-components
+```
