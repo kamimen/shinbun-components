@@ -17,7 +17,7 @@ try {
   writeFileSync(join(app, "package.json"), '{"name":"consumer","private":true,"type":"module"}');
   run("npm", ["install", join(work, tgz), "--no-audit", "--no-fund", "--silent"], app);
 
-  const installed = join(app, "node_modules", "shinbun-components");
+  const installed = join(app, "node_modules", "@kamimen", "shinbun-components");
   for (const f of ["dist/index.js", "dist/define.js", "dist/shinbun-components.min.css", "custom-elements.json", "README.md", "LICENSE"]) {
     if (!existsSync(join(installed, f))) throw new Error(`${f} is missing from the package`);
   }
@@ -27,8 +27,8 @@ try {
 
   writeFileSync(
     join(app, "consumer.ts"),
-    `import "shinbun-components/define";
-import { ShinbunPaper, ShinbunArticle, ShinbunHeadline, ShinbunAd, ShinbunTable, PlacedElement, splitTcy, type Writing } from "shinbun-components";
+    `import "@kamimen/shinbun-components/define";
+import { ShinbunPaper, ShinbunArticle, ShinbunHeadline, ShinbunAd, ShinbunTable, PlacedElement, splitTcy, type Writing } from "@kamimen/shinbun-components";
 
 const paper: ShinbunPaper = document.createElement("shinbun-paper");
 const writing: Writing = paper.writing;

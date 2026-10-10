@@ -8,7 +8,7 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and
 
 ### Added
 
-- Published to npm (`npm install shinbun-components`), with provenance from the Release workflow
+- Published to npm (`npm install @kamimen/shinbun-components`), with provenance from the Release workflow
 - `publishConfig`, `homepage` and `bugs` in `package.json`; the `engines` field is removed because this is a browser library
 
 ### Fixed

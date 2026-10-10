@@ -31,8 +31,8 @@ English | [日本語](README_ja.md)
 Load from the CDN (jsDelivr), pinned to a version so the page does not change after later releases:
 
 ```html
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/shinbun-components@0.1.1/dist/shinbun-components.min.css" />
-<script type="module" src="https://cdn.jsdelivr.net/npm/shinbun-components@0.1.1/dist/shinbun-components.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@kamimen/shinbun-components@0.1.1/dist/shinbun-components.min.css" />
+<script type="module" src="https://cdn.jsdelivr.net/npm/@kamimen/shinbun-components@0.1.1/dist/shinbun-components.min.js"></script>
 ```
 
 The CSS already contains [shinbun-css](https://github.com/kamimen/shinbun-css) v0.1.0; do not load it separately.
@@ -40,18 +40,18 @@ The CSS already contains [shinbun-css](https://github.com/kamimen/shinbun-css) v
 With a bundler, install from npm:
 
 ```sh
-npm install shinbun-components
+npm install @kamimen/shinbun-components
 ```
 
 ```js
-import "shinbun-components/define"; // registers every element
-import "shinbun-components/css";
+import "@kamimen/shinbun-components/define"; // registers every element
+import "@kamimen/shinbun-components/css";
 ```
 
 To use other tag names, skip `define` and call `define()` on each class:
 
 ```js
-import { ShinbunPaper } from "shinbun-components";
+import { ShinbunPaper } from "@kamimen/shinbun-components";
 ShinbunPaper.define("my-paper");
 ```
 

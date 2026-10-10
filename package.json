@@ -1,5 +1,5 @@
 {
-  "name": "shinbun-components",
+  "name": "@kamimen/shinbun-components",
   "version": "0.1.1",
   "description": "Web Components for laying out Japanese newspaper pages (新聞の紙面) with HTML tags alone. Built on shinbun-css, no runtime dependencies",
   "license": "MIT",

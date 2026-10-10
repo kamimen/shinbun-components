@@ -29,8 +29,8 @@ HTML のタグだけで、日本の新聞のような紙面を組む Web Compone
 CDN（jsDelivr）から、版を指定して読み込みます。版を固定すると、更新後も見た目が変わりません。
 
 ```html
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/shinbun-components@0.1.1/dist/shinbun-components.min.css" />
-<script type="module" src="https://cdn.jsdelivr.net/npm/shinbun-components@0.1.1/dist/shinbun-components.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@kamimen/shinbun-components@0.1.1/dist/shinbun-components.min.css" />
+<script type="module" src="https://cdn.jsdelivr.net/npm/@kamimen/shinbun-components@0.1.1/dist/shinbun-components.min.js"></script>
 ```
 
 CSS（約 15 KB）には [shinbun-css](https://github.com/kamimen/shinbun-css) v0.1.0 が入っているので、別に読み込む必要はありません。
@@ -38,18 +38,18 @@ CSS（約 15 KB）には [shinbun-css](https://github.com/kamimen/shinbun-css) v
 バンドラを使う場合は、npm からインストールします。
 
 ```sh
-npm install shinbun-components
+npm install @kamimen/shinbun-components
 ```
 
 ```js
-import "shinbun-components/define"; // すべての要素を登録する
-import "shinbun-components/css";
+import "@kamimen/shinbun-components/define"; // すべての要素を登録する
+import "@kamimen/shinbun-components/css";
 ```
 
 タグ名を変えたいときは、`define` を読み込まずに、各クラスの `define()` を呼びます。
 
 ```js
-import { ShinbunPaper } from "shinbun-components";
+import { ShinbunPaper } from "@kamimen/shinbun-components";
 ShinbunPaper.define("my-paper");
 ```
 
