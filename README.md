@@ -28,19 +28,19 @@ English | [日本語](README_ja.md)
 
 ## Usage
 
-Load from the CDN (jsDelivr), pinned to a tag so the page does not change after later releases:
+Load from the CDN (jsDelivr), pinned to a version so the page does not change after later releases:
 
 ```html
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/kamimen/shinbun-components@v0.1.0/dist/shinbun-components.min.css" />
-<script type="module" src="https://cdn.jsdelivr.net/gh/kamimen/shinbun-components@v0.1.0/dist/shinbun-components.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/shinbun-components@0.1.1/dist/shinbun-components.min.css" />
+<script type="module" src="https://cdn.jsdelivr.net/npm/shinbun-components@0.1.1/dist/shinbun-components.min.js"></script>
 ```
 
 The CSS already contains [shinbun-css](https://github.com/kamimen/shinbun-css) v0.1.0; do not load it separately.
 
-With a bundler, install from the repository tag (`dist/` is committed):
+With a bundler, install from npm:
 
 ```sh
-npm install github:kamimen/shinbun-components#v0.1.0
+npm install shinbun-components
 ```
 
 ```js

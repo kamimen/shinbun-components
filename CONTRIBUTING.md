@@ -27,5 +27,13 @@ Vertical writing can only be verified in a real browser. `npm run test:browser` 
 1. Update `version` in `package.json` and the heading in `CHANGELOG.md`.
 2. Run `npm run verify` and commit the result, including `dist/` and `custom-elements.json` (the CDN serves `dist/` straight from the tag).
 3. Tag and push: `git tag vX.Y.Z && git push origin main vX.Y.Z`.
-4. The Release workflow checks that the tag matches `package.json`, attaches `dist/` as a zip and creates the GitHub Release. The Pages workflow publishes the API documentation from `main`.
-5. Check `https://cdn.jsdelivr.net/gh/kamimen/shinbun-components@vX.Y.Z/dist/shinbun-components.min.js` loads.
+4. The Release workflow checks that the tag matches `package.json`, publishes to npm with provenance, attaches `dist/` as a zip and creates the GitHub Release. The Pages workflow publishes the API documentation from `main`.
+5. Check `https://cdn.jsdelivr.net/npm/shinbun-components@X.Y.Z/dist/shinbun-components.min.js` loads.
+
+### One-time npm setup (no token needed)
+
+The Release workflow publishes with npm Trusted Publishing, so no npm token is stored in GitHub.
+
+1. Publish the first version by hand, because a package must exist before it can have a trusted publisher: `npm publish` (npm asks for your 2FA code).
+2. On npmjs.com, open the package, then Settings, then Trusted Publisher, and choose GitHub Actions with owner `kamimen`, repository `shinbun-components` and workflow `release.yml`.
+3. From then on, pushing a `v*` tag publishes.

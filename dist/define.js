@@ -1,4 +1,4 @@
-/*! shinbun-components v0.1.0 | MIT License | shinbun-css as Web Components */
+/*! shinbun-components v0.1.1 | MIT License | shinbun-css as Web Components */
 import { ShinbunPaper } from "./elements/paper.js";
 import { ShinbunPage } from "./elements/page.js";
 import { ShinbunArticle } from "./elements/article.js";

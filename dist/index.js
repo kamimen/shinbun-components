@@ -1,4 +1,4 @@
-/*! shinbun-components v0.1.0 | MIT License | shinbun-css as Web Components */
+/*! shinbun-components v0.1.1 | MIT License | shinbun-css as Web Components */
 // Registration is a side effect, so it lives in ./define.ts
 export { ShinbunElement, PlacedElement } from "./internal/base.js";
 export { ShinbunPaper } from "./elements/paper.js";

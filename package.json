@@ -1,15 +1,19 @@
 {
   "name": "shinbun-components",
-  "version": "0.1.0",
-  "description": "shinbun-css を Web Components にしたもの。HTML のタグだけで、日本の新聞のような紙面を組める。実行時の依存なし",
+  "version": "0.1.1",
+  "description": "Web Components for laying out Japanese newspaper pages (新聞の紙面) with HTML tags alone. Built on shinbun-css, no runtime dependencies",
   "license": "MIT",
   "type": "module",
-  "engines": {
-    "node": ">=22.18"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/kamimen/shinbun-components.git"
+  },
+  "homepage": "https://kamimen.github.io/shinbun-components/",
+  "bugs": {
+    "url": "https://github.com/kamimen/shinbun-components/issues"
+  },
+  "publishConfig": {
+    "access": "public"
   },
   "keywords": [
     "web-components",
@@ -64,7 +68,7 @@
     "test": "npm run test:unit && npm run test:browser && npm run test:pack",
     "verify": "npm run typecheck && npm run build && npm run check && npm test && npm run docs",
     "serve": "node scripts/serve.mjs",
-    "prepublishOnly": "npm run verify"
+    "prepublishOnly": "npm run typecheck && npm run build && npm run check && npm run test:unit && npm run test:pack"
   },
   "devDependencies": {
     "@custom-elements-manifest/analyzer": "^0.10.4",

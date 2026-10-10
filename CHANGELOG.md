@@ -4,6 +4,20 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and
 
 ## [Unreleased]
 
+## [0.1.1] - 2026-10-11
+
+### Added
+
+- Published to npm (`npm install shinbun-components`), with provenance from the Release workflow
+- `publishConfig`, `homepage` and `bugs` in `package.json`; the `engines` field is removed because this is a browser library
+
+### Fixed
+
+- `shinbun-table` inside a vertical page: the table inherited vertical writing and was pushed off the page
+- Horizontal pages had no padding, so text touched the edge of the paper
+- A scrolling `shinbun-page` is made keyboard-focusable again after layout settles
+- The starter example no longer puts a photo inside an article, where it spanned every column
+
 ## [0.1.0] - 2026-10-11
 
 ### Added

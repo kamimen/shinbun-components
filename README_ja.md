@@ -26,19 +26,19 @@ HTML のタグだけで、日本の新聞のような紙面を組む Web Compone
 
 ## 使い方
 
-CDN（jsDelivr）から、タグを指定して読み込みます。版を固定すると、更新後も見た目が変わりません。
+CDN（jsDelivr）から、版を指定して読み込みます。版を固定すると、更新後も見た目が変わりません。
 
 ```html
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/kamimen/shinbun-components@v0.1.0/dist/shinbun-components.min.css" />
-<script type="module" src="https://cdn.jsdelivr.net/gh/kamimen/shinbun-components@v0.1.0/dist/shinbun-components.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/shinbun-components@0.1.1/dist/shinbun-components.min.css" />
+<script type="module" src="https://cdn.jsdelivr.net/npm/shinbun-components@0.1.1/dist/shinbun-components.min.js"></script>
 ```
 
 CSS（約 15 KB）には [shinbun-css](https://github.com/kamimen/shinbun-css) v0.1.0 が入っているので、別に読み込む必要はありません。
 
-バンドラを使う場合は、リポジトリのタグを指定してインストールできます（`dist/` をコミットしてあります）。
+バンドラを使う場合は、npm からインストールします。
 
 ```sh
-npm install github:kamimen/shinbun-components#v0.1.0
+npm install shinbun-components
 ```
 
 ```js
