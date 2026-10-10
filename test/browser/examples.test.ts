@@ -52,6 +52,7 @@ describe("example pages", () => {
       it("has no accessibility violations", async () => {
         for (const html of papers) {
           const paper = await mount<ShinbunPaper>(html);
+          await new Promise((r) => requestAnimationFrame(() => requestAnimationFrame(r)));
           await expect(paper).to.be.accessible();
         }
       });

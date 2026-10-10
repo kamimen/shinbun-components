@@ -31,6 +31,9 @@ export class ShinbunPage extends ShinbunElement {
     this.#mutation ??= new MutationObserver(() => this.#syncFocusable());
     this.#mutation.observe(this, { childList: true, subtree: true, characterData: true });
     this.#syncFocusable();
+    // layout can settle after connection (styles, fonts, nested tables)
+    requestAnimationFrame(() => this.#syncFocusable());
+    void document.fonts?.ready.then(() => this.#syncFocusable());
   }
 
   override disconnectedCallback(): void {

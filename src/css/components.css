@@ -38,6 +38,22 @@
     float: right;
   }
 
+  /* A table is always set horizontally. Inside a vertical page the wrapper inherited vertical-rl, so the
+     table's width:100% resolved against the whole viewport and the table was pushed off the page */
+  shinbun-table {
+    writing-mode: horizontal-tb;
+    width: max-content;
+    max-width: 100%;
+  }
+  shinbun-table > table {
+    width: auto;
+  }
+
+  /* shinbun-css pads a vertical page but not a horizontal one, so text touches the paper edge */
+  .sb-paper[data-sb-writing="horizontal"] .sb-page {
+    padding: calc(var(--sb-gap) / 2);
+  }
+
   /* A photo placed in the page without `w` has no height to fill, so give the image its ratio */
   .sb-page > .sb-photo:not([data-sb-w]) > .sb-photo__img {
     flex: none;

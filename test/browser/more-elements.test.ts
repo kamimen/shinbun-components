@@ -217,3 +217,29 @@ describe("page alignment", () => {
     expect(Math.abs(p.left - g.left)).to.be.lessThan(2);
   });
 });
+
+describe("table inside a vertical page", () => {
+  afterEach(cleanup);
+
+  it("stays inside the page and keeps its cells visible", async () => {
+    const paper = await mount(
+      `<shinbun-paper dan="6" chars="8"><shinbun-page><shinbun-table span="4"><table><caption>c</caption><tbody><tr><th scope="row">18</th><td>program</td></tr></tbody></table></shinbun-table></shinbun-page></shinbun-paper>`,
+    );
+    const page = paper.querySelector("shinbun-page")!.getBoundingClientRect();
+    const table = paper.querySelector("table")!.getBoundingClientRect();
+    expect(table.left).to.be.at.least(page.left - 1);
+    expect(table.right).to.be.at.most(page.right + 1);
+    expect(table.width).to.be.lessThan(page.width);
+    expect(paper.querySelector("td")!.getBoundingClientRect().width).to.be.greaterThan(10);
+  });
+});
+
+describe("horizontal page padding", () => {
+  afterEach(cleanup);
+
+  it("keeps text away from the paper edge", async () => {
+    const paper = await mount(`<shinbun-paper writing="horizontal"><shinbun-page><shinbun-article span="3"><p>${TEXT}</p></shinbun-article></shinbun-page></shinbun-paper>`);
+    const gap = paper.querySelector("p")!.getBoundingClientRect().left - paper.getBoundingClientRect().left;
+    expect(gap).to.be.greaterThan(2);
+  });
+});

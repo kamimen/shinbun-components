@@ -41,6 +41,9 @@ export class ShinbunPage extends ShinbunElement {
         __classPrivateFieldSet(this, _ShinbunPage_mutation, __classPrivateFieldGet(this, _ShinbunPage_mutation, "f") ?? new MutationObserver(() => __classPrivateFieldGet(this, _ShinbunPage_instances, "m", _ShinbunPage_syncFocusable).call(this)), "f");
         __classPrivateFieldGet(this, _ShinbunPage_mutation, "f").observe(this, { childList: true, subtree: true, characterData: true });
         __classPrivateFieldGet(this, _ShinbunPage_instances, "m", _ShinbunPage_syncFocusable).call(this);
+        // layout can settle after connection (styles, fonts, nested tables)
+        requestAnimationFrame(() => __classPrivateFieldGet(this, _ShinbunPage_instances, "m", _ShinbunPage_syncFocusable).call(this));
+        void document.fonts?.ready.then(() => __classPrivateFieldGet(this, _ShinbunPage_instances, "m", _ShinbunPage_syncFocusable).call(this));
     }
     disconnectedCallback() {
         super.disconnectedCallback();
