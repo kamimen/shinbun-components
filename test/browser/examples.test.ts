@@ -27,7 +27,20 @@ describe("example pages", () => {
         try {
           for (const html of papers) {
             const paper = await mount<ShinbunPaper>(html);
-            expect(paper.overflow().length, "overflow").to.equal(0);
+            const detail = paper.overflow().map((a) => {
+              const range = document.createRange();
+              range.selectNodeContents(a);
+              const box = a.getBoundingClientRect();
+              const rects = [...range.getClientRects()].filter((r) => r.width > 0 && r.height > 0);
+              return {
+                headline: a.querySelector("shinbun-headline")?.textContent,
+                box: [box.left, box.top, box.right, box.bottom].map(Math.round),
+                textBottom: Math.round(Math.max(...rects.map((r) => r.bottom))),
+                textRight: Math.round(Math.max(...rects.map((r) => r.right))),
+                font: getComputedStyle(a).fontFamily.slice(0, 30),
+              };
+            });
+            expect(detail, "overflowing articles").to.deep.equal([]);
             expect(paper.getBoundingClientRect().height).to.be.greaterThan(0);
           }
         } finally {
